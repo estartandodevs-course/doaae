@@ -21,6 +21,7 @@ const SplashScreen = () => {
             de você.
           </p>
         </div>
+
         <div className="info">
           <img className="box-icon" src={Box} alt="Box Icone" />
           <p>
@@ -31,10 +32,10 @@ const SplashScreen = () => {
       </div>
 
       <div className="container-spin">
-        <div className="spin">spin</div>
+        <div className="spin"> </div>
       </div>
 
-      <footer>
+      <footer className="footer">
         <p>© Estartando Devs - 2021</p>
       </footer>
     </Container>
