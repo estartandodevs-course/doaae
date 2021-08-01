@@ -1,13 +1,8 @@
 import React from "react";
-import { Button } from "../styles";
+import { Button } from "./styles";
 
-const ButtonEnter = () => {
-  return (
-    <div>
-      {/* <button type="button">Entrar</button> */}
-      <Button>Entrar</Button>
-    </div>
-  );
+const Buttons = ({ children, color }) => {
+  return <Button color={color}>{children}</Button>;
 };
 
-export default ButtonEnter;
+export { Buttons };

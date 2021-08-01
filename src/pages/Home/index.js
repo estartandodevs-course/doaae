@@ -1,14 +1,7 @@
 import React from "react";
 
-import ButtonEnter from "../../components/button";
-
 const Home = () => {
-  return (
-    <div>
-      Home Works
-      <ButtonEnter />
-    </div>
-  );
+  return <div>home works</div>;
 };
 
 export default Home;
