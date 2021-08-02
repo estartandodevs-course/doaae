@@ -15,7 +15,6 @@ const Card = styled.div`
   cursor: pointer;
 
   .badge {
-    display: ${(select) => (select ? "block" : "none")};
     position: absolute;
     top: -11px;
     left: -11px;
@@ -34,10 +33,13 @@ const Card = styled.div`
   }
 
   .card-icon {
-    margin-bottom: 7px;
+    display: flex;
+    align-items: flex-end;
+    height: 100px;
+    margin-top: 22px;
+    margin: 22px 0 15px 0;
     img {
       margin-left: 48px;
-      margin-top: ${({ margin }) => margin}px;
     }
   }
 
@@ -60,7 +62,7 @@ const Card = styled.div`
       width: 102px;
       height: auto;
       margin-left: 7px;
-      .description-item {
+      li {
         font-size: 10px;
         line-height: 18px;
       }

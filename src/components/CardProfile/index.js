@@ -1,24 +1,26 @@
 import { Card } from "./styles";
 
+// cardName - Título do card
+// backgroundColor - Cor de fundo
+// descriptions - Descrição do card em uma lista
+// Img - Imagem da parte de cima do card
+// Badge - Ícone de seleção
+// Select - Verificar se esta selecionado ou não
+// onClick - Rodar a função de click que seta o estado selecionado.
+
 const CardProfile = ({
   cardName,
   backgroundColor,
   descriptions,
   img,
-  margin,
   badge,
   select,
   onClick,
 }) => {
   if (select) {
     return (
-      <Card
-        backgroundColor={backgroundColor}
-        margin={margin}
-        select={select}
-        onClick={onClick}
-      >
-        <img className="badge" src={badge} alt="" />
+      <Card backgroundColor={backgroundColor} select={select} onClick={onClick}>
+        <img className="badge" src={badge} alt="Icone de card Selecionado" />
         <div className="card-info">
           <span className="name">{cardName}</span>
         </div>
@@ -26,22 +28,16 @@ const CardProfile = ({
     );
   }
   return (
-    <Card
-      backgroundColor={backgroundColor}
-      margin={margin}
-      select={select}
-      onClick={onClick}
-    >
+    <Card backgroundColor={backgroundColor} select={select} onClick={onClick}>
       <div className="card-icon">
-        <img src={img} alt="Card profile icon" />
+        <img src={img} alt="Icone do perfil" />
       </div>
       <div className="card-info">
         <span className="name">{cardName}</span>
-        <ul className="description-list">
-          {descriptions.map((description) => (
-            <li className="description-item">{description}</li>
-          ))}
-        </ul>
+        <ul
+          className="description-list"
+          dangerouslySetInnerHTML={{ __html: descriptions }}
+        />
       </div>
     </Card>
   );
