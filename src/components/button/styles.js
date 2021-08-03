@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 // Estilo do componente
-const Button = styled.button`
+const ButtonStyled = styled.button`
   width: 309px;
   height: 48px;
   background-color: ${({ color }) => color || "#007067"};
@@ -18,4 +18,4 @@ const Button = styled.button`
   }
 `;
 
-export { Button };
+export { ButtonStyled };

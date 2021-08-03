@@ -1,8 +1,8 @@
 import React from "react";
-import { Button } from "./styles";
+import { ButtonStyled } from "./styles";
 
-const Buttons = ({ children, color }) => {
-  return <Button color={color}>{children}</Button>;
+const Button = ({ children, color }) => {
+  return <ButtonStyled color={color}>{children}</ButtonStyled>;
 };
 
-export { Buttons };
+export { Button };
