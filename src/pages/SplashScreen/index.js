@@ -1,8 +1,8 @@
 import { Container, HeaderBackground } from "./styles";
 import Image from "../../assets/img/people-background.png";
-import Logo from "../../assets/img/logo.svg";
-import MapPin from "../../assets/img/map-pin.svg";
-import Box from "../../assets/img/shipping-box.svg";
+import Logo from "../../assets/icons/logo.svg";
+import MapPin from "../../assets/icons/map-pin.svg";
+import Box from "../../assets/icons/shipping-box.svg";
 import { LoadingSpin } from "../../components/Shared/LoadingSpin";
 import { Info } from "../../components/SplashScreen/Info";
 
