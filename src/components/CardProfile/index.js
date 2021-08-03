@@ -1,13 +1,5 @@
 import { Card } from "./styles";
 
-// cardName - Título do card
-// backgroundColor - Cor de fundo
-// descriptions - Descrição do card em uma lista
-// Img - Imagem da parte de cima do card
-// Badge - Ícone de seleção
-// Select - Verificar se esta selecionado ou não
-// onClick - Rodar a função de click que seta o estado selecionado.
-
 const CardProfile = ({
   cardName,
   backgroundColor,
