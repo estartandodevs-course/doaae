@@ -3,6 +3,8 @@ import Image from "../../assets/img/people-background.png";
 import Logo from "../../assets/img/logo.svg";
 import MapPin from "../../assets/img/map-pin.svg";
 import Box from "../../assets/img/shipping-box.svg";
+import { LoadingSpin } from "../../components/Shared/LoadingSpin";
+import { Info } from "../../components/SplashScreen/Info";
 
 const SplashScreen = () => {
   return (
@@ -13,27 +15,23 @@ const SplashScreen = () => {
       </HeaderBackground>
 
       <div className="container-info">
-        <div className="info">
-          <img className="map-icon" src={MapPin} alt="Mapa Icone" />
-          <p>
-            Encontre o ponto de coleta mais
-            <strong> próximo </strong>
-            de você.
-          </p>
-        </div>
-
-        <div className="info">
-          <img className="box-icon" src={Box} alt="Box Icone" />
-          <p>
-            Doar contribui com a transformação para o melhor da sociedade, das
-            instituições e, principalmente das pessoas.
-          </p>
-        </div>
+        <Info
+          image={MapPin}
+          text="<p>
+          Encontre o ponto de coleta mais
+          <strong> próximo </strong>
+          de você.
+        </p>"
+        />
+        <Info
+          image={Box}
+          text="<p>
+          Doar contribui com a <strong>transformação</strong> para o melhor da <strong>sociedade</strong>, das <strong>instituições</strong> e, principalmente das <strong>pessoas</strong>.
+        </p>"
+        />
       </div>
 
-      <div className="container-spin">
-        <div className="spin"> </div>
-      </div>
+      <LoadingSpin />
 
       <footer className="footer">
         <p>© Estartando Devs - 2021</p>
