@@ -7,7 +7,7 @@ const InputElement = styled.div`
   height: 3rem;
   font-family: "Poppins";
   font-size: 1.125rem;
-  margin-bottom: 25px;
+  margin-bottom: 33px;
 
   // Mensagem de error
   .input-error-msg {
