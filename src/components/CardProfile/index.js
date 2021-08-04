@@ -1,4 +1,4 @@
-import { Card } from "./styles";
+import * as S from "./styles";
 
 const CardProfile = ({
   cardName,
@@ -8,30 +8,43 @@ const CardProfile = ({
   badge,
   select,
   onClick,
+  small,
 }) => {
-  if (select) {
+  if (small) {
+    console.log(small);
     return (
-      <Card backgroundColor={backgroundColor} select={select} onClick={onClick}>
-        <img className="badge" src={badge} alt="Icone de card Selecionado" />
-        <div className="card-info">
-          <span className="name">{cardName}</span>
-        </div>
-      </Card>
+      <S.Card
+        backgroundColor={backgroundColor}
+        select={select}
+        onClick={onClick}
+        small={small}
+      >
+        {select && (
+          <S.Badge
+            className="badge"
+            src={badge}
+            alt="Icone de card Selecionado"
+          />
+        )}
+        <S.CardInfo small={small}>
+          <S.Name>{cardName}</S.Name>
+        </S.CardInfo>
+      </S.Card>
     );
   }
   return (
-    <Card backgroundColor={backgroundColor} select={select} onClick={onClick}>
-      <div className="card-icon">
-        <img src={img} alt="Icone do perfil" />
-      </div>
-      <div className="card-info">
-        <span className="name">{cardName}</span>
-        <ul
+    <S.Card backgroundColor={backgroundColor} select={select} onClick={onClick}>
+      <S.CardIcon>
+        <S.Icon src={img} alt="Icone do perfil" />
+      </S.CardIcon>
+      <S.CardInfo>
+        <S.Name>{cardName}</S.Name>
+        <S.DescriptionList
           className="description-list"
           dangerouslySetInnerHTML={{ __html: descriptions }}
         />
-      </div>
-    </Card>
+      </S.CardInfo>
+    </S.Card>
   );
 };
 

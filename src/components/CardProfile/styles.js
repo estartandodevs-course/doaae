@@ -1,27 +1,21 @@
 import styled from "styled-components";
 
-const Card = styled.div`
+export const Card = styled.div`
   width: 146px;
-  height: ${({ select }) => (select ? "52px" : "270px")};
+  height: ${({ small }) => (small ? "52px" : "270px")};
   background-color: ${({ backgroundColor }) => backgroundColor || "#898989"};
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   position: relative;
   font-family: "Poppins";
   color: #fff;
-  overflow: ${({ select }) => (select ? "visible" : "hidden")};
+  overflow: ${({ small }) => (small ? "visible" : "hidden")};
   transition: height 0.4s ease;
   user-select: none;
   cursor: pointer;
 
-  .badge {
-    position: absolute;
-    top: -11px;
-    left: -11px;
-  }
-
   &::before {
-    display: ${({ select }) => (select ? "none" : "block")};
+    display: ${({ small }) => (small ? "none" : "block")};
     position: absolute;
     left: -40px;
     top: 13px;
@@ -31,43 +25,48 @@ const Card = styled.div`
     border: 4px solid rgba(255, 255, 255, 0.25);
     transform: matrix(0.71, -0.71, 0.7, 0.71, 0, 0);
   }
+`;
+export const CardInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  height: ${({ small }) => (small ? "100%" : "auto")};
+  justify-content: ${({ small }) => (small ? "center" : "flex-start")};
+`;
 
-  .card-icon {
-    display: flex;
-    align-items: flex-end;
-    height: 100px;
-    margin-top: 22px;
-    margin: 22px 0 15px 0;
-    img {
-      margin-left: 48px;
-    }
-  }
+export const Name = styled.span`
+  align-self: flex-start;
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 11px;
+`;
 
-  .card-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    height: ${({ select }) => (select ? "100%" : "auto")};
-    justify-content: ${({ select }) => (select ? "center" : "flex-start")};
+export const DescriptionList = styled.ul`
+  width: 102px;
+  height: auto;
+  margin-left: 7px;
 
-    .name {
-      align-self: flex-start;
-      font-size: 14px;
-      font-weight: 700;
-      margin-left: 11px;
-    }
-
-    .description-list {
-      width: 102px;
-      height: auto;
-      margin-left: 7px;
-      li {
-        font-size: 10px;
-        line-height: 18px;
-      }
-    }
+  li {
+    font-size: 10px;
+    line-height: 18px;
   }
 `;
 
-export { Card };
+export const Badge = styled.img`
+  position: absolute;
+  top: -11px;
+  left: -11px;
+`;
+
+export const CardIcon = styled.div`
+  display: flex;
+  align-items: flex-end;
+  height: 100px;
+  margin-top: 22px;
+  margin: 22px 0 15px 0;
+`;
+
+export const Icon = styled.img`
+  margin-left: 48px;
+`;
