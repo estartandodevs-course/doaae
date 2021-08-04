@@ -11,7 +11,6 @@ const CardProfile = ({
   small,
 }) => {
   if (small) {
-    console.log(small);
     return (
       <S.Card
         backgroundColor={backgroundColor}
