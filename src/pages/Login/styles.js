@@ -5,10 +5,8 @@ export const Container = styled.main`
   padding: 0 30px;
 `;
 
-export const ContainerBall = styled.div``;
-
 export const Ball = styled.div`
-  position: absolute;
+  position: fixed;
   border-radius: 50%;
   top: -497px;
   left: -110px;
@@ -69,6 +67,6 @@ export const CreateAccount = styled(Link)`
   color: #389674;
   line-height: 24px;
   text-decoration: underline;
-  margin: 8px 35px;
+  margin: 8px 0 35px 0;
   text-align: center;
 `;
