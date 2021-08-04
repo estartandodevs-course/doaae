@@ -28,8 +28,13 @@ export const LogoContainer = styled.div`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-top: 67px;
   position: relative;
+`;
+
+export const TitleContainer = styled.div`
+  width: 309px;
 `;
 
 export const Title = styled.h1`
@@ -40,13 +45,17 @@ export const Title = styled.h1`
 `;
 
 export const Inputs = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 13px;
 `;
 
 export const ForgotPassword = styled(Link)`
   position: absolute;
-  right: 8px;
-  top: ${({ error }) => (error ? "203px" : "173px")};
+  right: 0px;
+  top: ${({ error }) => (error ? "155px" : "129px")};
   font-family: "Poppins";
   font-weight: 300;
   line-height: 24px;
@@ -67,6 +76,6 @@ export const CreateAccount = styled(Link)`
   color: #389674;
   line-height: 24px;
   text-decoration: underline;
-  margin: 8px 0 35px 0;
+  margin: 8px 0 26px 0;
   text-align: center;
 `;

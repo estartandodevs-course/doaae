@@ -4,7 +4,7 @@ import { Input, InputPassword } from "../../components/Input";
 import { Button } from "../../components/Button";
 
 const Login = () => {
-  const error = false;
+  const error = true;
   return (
     <S.Container>
       <S.Ball />
@@ -14,7 +14,9 @@ const Login = () => {
       </S.LogoContainer>
 
       <S.Form>
-        <S.Title>Login</S.Title>
+        <S.TitleContainer>
+          <S.Title>Login</S.Title>
+        </S.TitleContainer>
 
         <S.Inputs>
           <Input
@@ -30,9 +32,8 @@ const Login = () => {
             label="Senha"
             errorMessage={null}
           />
+          <S.ForgotPassword error={error}>Esqueci minha senha</S.ForgotPassword>
         </S.Inputs>
-
-        <S.ForgotPassword error={error}>Esqueci minha senha</S.ForgotPassword>
 
         <S.OptionsButtons>
           <Button>Entrar</Button>

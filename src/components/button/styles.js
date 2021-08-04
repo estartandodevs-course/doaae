@@ -12,6 +12,7 @@ const ButtonStyled = styled.button`
   border: none;
   font-family: "Poppins";
   font-weight: 700;
+  cursor: pointer;
 
   &:disabled {
     background-color: #c5c5c5;

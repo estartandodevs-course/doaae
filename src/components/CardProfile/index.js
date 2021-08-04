@@ -8,11 +8,19 @@ const CardProfile = ({
   badge,
   select,
   onClick,
+  small,
 }) => {
-  if (select) {
+  if (small) {
     return (
-      <Card backgroundColor={backgroundColor} select={select} onClick={onClick}>
-        <img className="badge" src={badge} alt="Icone de card Selecionado" />
+      <Card
+        backgroundColor={backgroundColor}
+        select={select}
+        onClick={onClick}
+        small={small}
+      >
+        {select && (
+          <img className="badge" src={badge} alt="Icone de card Selecionado" />
+        )}
         <div className="card-info">
           <span className="name">{cardName}</span>
         </div>
