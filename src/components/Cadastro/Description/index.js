@@ -8,7 +8,12 @@ const Description = ({ small }) => {
       </S.Text>
     );
   }
-  return <S.Text>De que forma você irá utilizar este aplicativo?</S.Text>;
+  return (
+    <S.Text>
+      De que forma você irá utilizar este aplicativo? Escolha a opção que mais
+      se adequa ao seu perfil.
+    </S.Text>
+  );
 };
 
 export { Description };
