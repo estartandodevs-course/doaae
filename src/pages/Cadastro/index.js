@@ -1,66 +1,56 @@
-import { useState } from "react";
+import { useReducer } from "react";
 import * as S from "./styles";
 import { ContainerNavbar } from "../../components/ContainerNavbar";
 import { CardProfile } from "../../components/CardProfile";
-import { Input, InputPassword } from "../../components/Input";
-import { Button } from "../../components/Button";
+import { Form } from "../../components/Cadastro/Form";
+import { Description } from "../../components/Cadastro/Description";
 import DoadorImg from "../../assets/icons/doador-img.svg";
 import InstituicaoImg from "../../assets/icons/instituicao-img.svg";
 import DoadorBadge from "../../assets/icons/doador-badge.svg";
 import InstituicaoBadge from "../../assets/icons/instituicao-badge.svg";
 
 const Cadastro = () => {
-  const [doadorSelect, setDoadorSelect] = useState(false);
-  const [instituicaoSelect, setInstituicaoSelect] = useState(false);
-  const [small, setSmall] = useState(false);
-
-  const handleDoadorSelect = () => {
-    if (doadorSelect) {
-      setSmall(false);
-      return setDoadorSelect(false);
+  const handlePerfil = (stateAction, action) => {
+    switch (action.type) {
+      case "Doador": {
+        const shouldClose = stateAction.selected !== "Doador";
+        return { selected: shouldClose ? "Doador" : " ", close: shouldClose };
+      }
+      case "Instituição": {
+        const shouldClose = stateAction.selected !== "Instituição";
+        return {
+          selected: shouldClose ? "Instituição" : " ",
+          close: shouldClose,
+        };
+      }
+      default:
+        throw Error();
     }
-    setSmall(true);
-    return setDoadorSelect(true);
   };
 
-  const handleInstituicaoSelect = () => {
-    if (instituicaoSelect) {
-      setSmall(false);
-      return setInstituicaoSelect(false);
-    }
-    setSmall(true);
-    return setInstituicaoSelect(true);
-  };
-
-  const Text = () => {
-    if (small) {
-      return (
-        <S.Text small={small}>
-          Vamos precisar de alguns dados seu para concluir seu cadastro.
-        </S.Text>
-      );
-    }
-    return <S.Text>De que forma você irá utilizar este aplicativo?</S.Text>;
-  };
+  const [state, dispatch] = useReducer(handlePerfil, {
+    selected: " ",
+    close: false,
+  });
 
   return (
     <S.Container>
       <ContainerNavbar>Cadastro</ContainerNavbar>
-      {Text()}
+      <Description small={state.close} />
       <S.Profiles>
         <CardProfile
-          onClick={handleDoadorSelect}
+          onClick={() => dispatch({ type: "Doador" })}
           cardName="Doador"
           img={DoadorImg}
           backgroundColor="#388596"
           descriptions="<li>Deseja doar algo</li>
           <li>Busca por instituições para fazer a doação</li>"
           badge={DoadorBadge}
-          select={doadorSelect}
-          small={small}
+          select={state.selected === "Doador"}
+          small={state.close}
         />
         <CardProfile
-          onClick={handleInstituicaoSelect}
+          onClick={() => dispatch({ type: "Instituição" })}
           cardName="Instituição"
           img={InstituicaoImg}
           backgroundColor="#389674"
@@ -68,52 +58,11 @@ const Cadastro = () => {
           <li>Gerencia ações</li>
           <li>Faz agendamentos para receber as doações</li>"
           badge={InstituicaoBadge}
-          select={instituicaoSelect}
-          small={small}
+          select={state.selected === "Instituição"}
+          small={state.close}
         />
       </S.Profiles>
-      {small && (
-        <S.Form>
-          <S.Title>Cadastro</S.Title>
-          <Input
-            inputType="text"
-            id="nome"
-            htmlFor="nome"
-            label="Nome"
-            errorMessage={null}
-            key="nome"
-          />
-          <Input
-            inputType="email"
-            id="email"
-            htmlFor="email"
-            label="Email"
-            errorMessage={null}
-            key="email"
-          />
-          <Input
-            inputType="number"
-            id="cpf"
-            htmlFor="cpf"
-            label="CPF"
-            errorMessage={null}
-            key="cpf"
-          />
-          <InputPassword
-            id="senha"
-            htmlFor="senha"
-            label="Senha"
-            errorMessage={null}
-          />
-          <InputPassword
-            id="confirmar-senha"
-            htmlFor="confirmar-senha"
-            label="Confirmar senha"
-            errorMessage={null}
-          />
-          <Button>Avançar</Button>
-        </S.Form>
-      )}
+      {state.close && <Form />}
     </S.Container>
   );
 };
