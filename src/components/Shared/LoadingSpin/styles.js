@@ -5,8 +5,6 @@ const SpinElement = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
-
   .spin {
     width: 30px;
     height: 30px;
@@ -17,7 +15,6 @@ const SpinElement = styled.div`
     border-bottom: solid 5px #389674;
     border-left: solid 5px transparent;
     animation: 1s infinite linear spin;
-
     @keyframes spin {
       from {
         transform: rotate(0deg);

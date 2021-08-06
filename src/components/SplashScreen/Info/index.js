@@ -1,9 +1,11 @@
+import * as S from "./styled";
+
 const Info = ({ image, text }) => {
   return (
-    <div className="info">
-      <img className="map-icon" src={image} alt="Mapa Icone" />
+    <S.InfoStyled>
+      <S.Icon className="map-icon" src={image} alt="Mapa Icone" />
       <div dangerouslySetInnerHTML={{ __html: text }} />
-    </div>
+    </S.InfoStyled>
   );
 };
 

@@ -1,4 +1,4 @@
-import { Container, HeaderBackground } from "./styles";
+import * as S from "./styles";
 import Image from "../../assets/img/people-background.png";
 import Logo from "../../assets/icons/logo.svg";
 import MapPin from "../../assets/icons/map-pin.svg";
@@ -8,13 +8,13 @@ import { Info } from "../../components/SplashScreen/Info";
 
 const SplashScreen = () => {
   return (
-    <Container>
-      <HeaderBackground>
+    <S.Container>
+      <S.HeaderBackground>
         <img src={Image} alt="Pessoas  voluntarias" />
-        <img className="logo" src={Logo} alt="Logo doaae" />
-      </HeaderBackground>
+        <S.Logo className="logo" src={Logo} alt="Logo doaae" />
+      </S.HeaderBackground>
 
-      <div className="container-info">
+      <S.ContainerInfo>
         <Info
           image={MapPin}
           text="<p>
@@ -29,14 +29,14 @@ const SplashScreen = () => {
           Doar contribui com a <strong>transformação</strong> para o melhor da <strong>sociedade</strong>, das <strong>instituições</strong> e, principalmente das <strong>pessoas</strong>.
         </p>"
         />
-      </div>
+      </S.ContainerInfo>
 
       <LoadingSpin />
 
-      <footer className="footer">
+      <S.Footer className="footer">
         <p>© Estartando Devs - 2021</p>
-      </footer>
-    </Container>
+      </S.Footer>
+    </S.Container>
   );
 };
 
