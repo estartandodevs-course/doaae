@@ -12,7 +12,6 @@ const Login = () => {
       <S.LogoContainer>
         <Logo />
       </S.LogoContainer>
-
       <S.Form>
         <S.TitleContainer>
           <S.Title>Login</S.Title>

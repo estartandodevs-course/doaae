@@ -10,6 +10,7 @@ import DoadorBadge from "../../assets/icons/doador-badge.svg";
 import InstituicaoBadge from "../../assets/icons/instituicao-badge.svg";
 
 const Cadastro = () => {
+  // TODO: Fazer em outro local o handlePerfil
   const handlePerfil = (stateAction, action) => {
     switch (action.type) {
       case "Doador": {

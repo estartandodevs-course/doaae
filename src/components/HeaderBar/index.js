@@ -4,7 +4,7 @@ import ProfileIcon from "../../assets/icons/profile-icon.svg";
 import DoorExit from "../../assets/icons/door-exit.svg";
 import BackIcon from "../../assets/icons/back-icon.svg";
 
-const HeaderBar = ({ home, profileImage, isLogged, children }) => {
+const HeaderBar = ({ home, profileImage = null, isLogged, children }) => {
   const { goBack } = useHistory();
 
   if (isLogged) {
@@ -22,7 +22,7 @@ const HeaderBar = ({ home, profileImage, isLogged, children }) => {
           )}
           <S.LogoText>{children}</S.LogoText>
         </S.ContainerExit>
-        {profileImage !== null ? (
+        {profileImage ? (
           <S.Profile to="profile">
             <S.ProfileIcon src={profileImage} />
           </S.Profile>
