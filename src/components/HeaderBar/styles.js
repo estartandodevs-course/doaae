@@ -28,6 +28,15 @@ export const ExitLink = styled(Link)`
   align-items: center;
 `;
 
+export const Back = styled.img``;
+
+export const BackLink = styled.button`
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+`;
+
 export const LogoText = styled.span`
   font-size: 22px;
   font-weight: 700;

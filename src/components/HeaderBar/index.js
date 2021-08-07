@@ -1,16 +1,26 @@
+import { useHistory } from "react-router-dom";
 import * as S from "./styles";
 import ProfileIcon from "../../assets/icons/profile-icon.svg";
 import DoorExit from "../../assets/icons/door-exit.svg";
+import BackIcon from "../../assets/icons/back-icon.svg";
 
-const HeaderBar = ({ profileImage, isLogged }) => {
+const HeaderBar = ({ home, profileImage, isLogged, children }) => {
+  const { goBack } = useHistory();
+
   if (isLogged) {
     return (
       <S.Container>
         <S.ContainerExit>
-          <S.ExitLink to="login">
-            <S.Exit src={DoorExit} />
-          </S.ExitLink>
-          <S.LogoText>DoaAê!</S.LogoText>
+          {home ? (
+            <S.ExitLink to="login">
+              <S.Exit src={DoorExit} />
+            </S.ExitLink>
+          ) : (
+            <S.BackLink onClick={goBack}>
+              <S.Back src={BackIcon} />
+            </S.BackLink>
+          )}
+          <S.LogoText>{children}</S.LogoText>
         </S.ContainerExit>
         {profileImage !== null ? (
           <S.Profile to="profile">
@@ -26,7 +36,14 @@ const HeaderBar = ({ profileImage, isLogged }) => {
   }
   return (
     <S.Container>
-      <S.LogoText>DoaAê!</S.LogoText>
+      <S.ContainerExit>
+        {!home && (
+          <S.BackLink onClick={goBack}>
+            <S.Back src={BackIcon} />
+          </S.BackLink>
+        )}
+        <S.LogoText>{children}</S.LogoText>
+      </S.ContainerExit>
       <S.Login to="/login">Fazer login</S.Login>
     </S.Container>
   );
