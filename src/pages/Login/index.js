@@ -1,7 +1,7 @@
 import * as S from "./styles";
 import { Logo } from "../../components/Shared/Logo";
 import { Input, InputPassword } from "../../components/Input";
-import { Button } from "../../components/button";
+import { Button } from "../../components/Button";
 
 const Login = () => {
   const error = true;
@@ -12,7 +12,6 @@ const Login = () => {
       <S.LogoContainer>
         <Logo />
       </S.LogoContainer>
-
       <S.Form>
         <S.TitleContainer>
           <S.Title>Login</S.Title>
