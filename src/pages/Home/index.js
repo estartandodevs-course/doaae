@@ -1,8 +1,7 @@
 import React from "react";
-import DividerPage from "../../components/DividerPage";
 
 const Home = () => {
-  return <DividerPage />;
+  return <p>home work</p>;
 };
 
 export default Home;
