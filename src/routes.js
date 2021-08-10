@@ -1,12 +1,15 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { DividerPage } from "./components/DividerPage";
+import { Login, SplashScreen, Cadastro, Home } from "./pages";
 
 export default function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={DividerPage} />
+        <Route exact path="/" component={SplashScreen} />
+        <Route path="/login" component={Login} />
+        <Route path="/cadastro" component={Cadastro} />
+        <Route exact path="/Home" component={Home} />
       </Switch>
     </BrowserRouter>
   );

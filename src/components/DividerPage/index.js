@@ -1,7 +1,7 @@
-import { Div } from "./styles";
+import * as S from "./styles";
 
 const DividerPage = () => {
-  return <Div />;
+  return <S.Divider />;
 };
 
-export { DividerPage };
+export default DividerPage;
