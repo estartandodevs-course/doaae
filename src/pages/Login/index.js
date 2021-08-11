@@ -1,7 +1,7 @@
 import * as S from "./styles";
 import { Logo } from "../../components/Shared/Logo";
 import { Input, InputPassword } from "../../components/Input";
-import { Button } from "../../components/Button";
+import { Button } from "../../components/button";
 
 const Login = () => {
   const error = true;

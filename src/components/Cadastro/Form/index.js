@@ -1,7 +1,7 @@
 import * as S from "./styles";
 
 import { Input, InputPassword } from "../../Input";
-import { Button } from "../../Button";
+import { Button } from "../../button";
 
 const Form = () => {
   return (
