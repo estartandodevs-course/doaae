@@ -24,9 +24,7 @@ const CardInstituicao = ({
             <S.Categorys>{categoria}</S.Categorys>
           ))}
         </S.CategorysList>
-        <S.Location>
-          {logradouro},{numero},{bairro}.{cidade}
-        </S.Location>
+        <S.Location>{`${logradouro}, ${numero}, ${bairro}. ${cidade}`}</S.Location>
       </S.ContainerInfo>
     </S.Container>
   );
