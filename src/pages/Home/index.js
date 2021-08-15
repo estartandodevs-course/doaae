@@ -1,13 +1,7 @@
 import React from "react";
-import { CheckBox } from "../../components/Checkbox";
 
 const Home = () => {
-  return (
-    <p>
-      home work
-      <CheckBox />
-    </p>
-  );
+  return <p>home work</p>;
 };
 
 export default Home;

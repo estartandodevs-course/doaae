@@ -1,11 +1,12 @@
-import { CheckBoxStyled } from "./styles";
+import * as S from "./styles";
 
 const CheckBox = () => {
   return (
-    <CheckBoxStyled>
-      <input type="checkbox" id="box" name="box" />
+    <S.CheckBoxStyled>
+      <S.Input type="checkbox" />
+
       <label htmlFor="box">Compartilhar meu telefone com a instituição</label>
-    </CheckBoxStyled>
+    </S.CheckBoxStyled>
   );
 };
 
