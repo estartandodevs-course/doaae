@@ -27,10 +27,28 @@
     "react/react-in-jsx-scope": "off",
     "object-curly-newline": 0,
     "linebreak-style": 0,
+    "jsx-a11y/label-has-for": 0,
     "no-multiple-empty-lines": [
       2,
       {
         "max": 2
+      }
+    ],
+
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+    "jsx-a11y/label-has-for": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
       }
     ]
   }
