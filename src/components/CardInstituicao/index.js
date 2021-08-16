@@ -1,4 +1,6 @@
 import * as S from "./styles";
+import CalendarioIcon from "../../assets/icons/calendario-icon.svg";
+import Badge from "../../assets/icons/badge-card-icon.svg";
 
 const CardInstituicao = ({
   avatar,
@@ -9,9 +11,11 @@ const CardInstituicao = ({
   bairro,
   cidade,
   diasDaSemana,
+  verificada,
 }) => {
   return (
     <S.Container>
+      {verificada && <S.Verificado src={Badge} />}
       <S.ContainerAvatar>
         <S.Avatar src={avatar} alt="Ong profile avatar" />
       </S.ContainerAvatar>
@@ -24,6 +28,7 @@ const CardInstituicao = ({
         </S.CategorysList>
         <S.Location>{`${logradouro}, ${numero}, ${bairro}. ${cidade}`}</S.Location>
         <S.ContainerDays>
+          <S.CalendarioIcon src={CalendarioIcon} />
           <S.Semana>{diasDaSemana}</S.Semana>
         </S.ContainerDays>
       </S.ContainerInfo>
