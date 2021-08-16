@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { CardInstituicao } from "../../components/CardInstituicao";
-import { instituicoes } from "../../mock/ongs";
+import { InstituicaoContext } from "../../contexts";
 
 const Home = () => {
-  return instituicoes.map(({ perfil, nome }) => {
+  const { instituicoes, getAll } = useContext(InstituicaoContext);
+
+  useEffect(() => {
+    if (!instituicoes.length) {
+      getAll();
+    }
+  }, []);
+
+  return instituicoes.map(({ logo, nome, semana, endereco, categorias }) => {
     return (
       <CardInstituicao
-        avatar={perfil.avatar.img}
-        name={nome}
-        categorias={perfil.categorias}
-        logradouro={perfil.logradouro}
-        numero={perfil.numero}
-        cidade={perfil.cidade}
-        bairro={perfil.complemento}
+        avatar={logo}
+        nome={nome}
+        categorias={categorias}
+        logradouro={endereco.logradouro}
+        numero={endereco.numero}
+        cidade={endereco.cidade}
+        bairro={endereco.complemento}
+        diasDaSemana={semana}
       />
     );
   });

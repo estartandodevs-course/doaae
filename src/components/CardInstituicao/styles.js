@@ -15,3 +15,7 @@ export const CategorysList = styled.ul``;
 export const Categorys = styled.li``;
 
 export const Location = styled.p``;
+
+export const ContainerDays = styled.div``;
+
+export const Semana = styled.span``;
