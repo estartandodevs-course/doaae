@@ -2,7 +2,7 @@ import * as S from "./styles";
 import { HeaderBar } from "../../components/HeaderBar";
 import { Input } from "../../components/Input";
 import { CheckBox } from "../../components/Checkbox";
-import { Button } from "../../components/button";
+import { Button } from "../../components/Button";
 
 const AgendarDoacao = () => {
   const DATA_USER = {
