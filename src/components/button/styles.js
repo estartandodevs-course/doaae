@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-// Estilo do componente
 export const ButtonStyled = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 308px;
-  height: 48px;
+  width: ${({ width }) => (width ? `${width}px` : "308px")};
+  height: ${({ height }) => (height ? `${height}px` : "48px")};
   background-color: ${({ color }) => color || "#007067"};
   border-radius: 10px;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.18);
