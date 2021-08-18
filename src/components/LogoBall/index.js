@@ -1,15 +1,13 @@
-import { useHistory } from "react-router-dom";
 import * as S from "./styles";
 import { Logo } from "../Shared/Logo";
 import ArrowBack from "../../assets/icons/arrow-back-icon.svg";
 
-const LogoBall = ({ back }) => {
-  const { goBack } = useHistory();
+const LogoBall = ({ backTo }) => {
   return (
     <S.LogoBallStyled>
       <S.BallTop />
-      {back ? (
-        <S.GoBack onClick={goBack}>
+      {backTo ? (
+        <S.GoBack to={backTo}>
           <S.BackIcon src={ArrowBack} />
         </S.GoBack>
       ) : null}

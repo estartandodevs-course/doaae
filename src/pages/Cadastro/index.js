@@ -43,7 +43,7 @@ const Cadastro = () => {
         <ContainerNavbar>Cadastro</ContainerNavbar>
       </S.NavBarContainer>
       <S.ContainerLeft>
-        <LogoBall back />
+        <LogoBall backTo="/login" />
         <S.ContainerDescription>
           <DescriptionDesktop small={state.close} selected={state.selected} />
           <Button width="263px" to="/login">

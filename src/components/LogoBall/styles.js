@@ -36,6 +36,10 @@ export const ContainerLogo = styled.div`
   }
 `;
 
-export const GoBack = styled(Link)``;
+export const GoBack = styled(Link)`
+  position: absolute;
+  width: 38px;
+  height: 38px;
+`;
 
 export const BackIcon = styled.img``;
