@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Card = styled.div`
+export const Card = styled.div`
   width: 146px;
   height: ${({ small }) => (small ? "52px" : "270px")};
   background-color: ${({ backgroundColor }) => backgroundColor || "#898989"};
@@ -13,6 +13,9 @@ const Card = styled.div`
   transition: height 0.4s ease;
   user-select: none;
   cursor: pointer;
+  @media (min-width: 900px) {
+    width: ${({ small }) => (small ? "146px" : "225px")};
+  }
 
   .badge {
     position: absolute;
@@ -32,15 +35,7 @@ const Card = styled.div`
     transform: matrix(0.71, -0.71, 0.7, 0.71, 0, 0);
   }
 
-  .card-icon {
-    display: flex;
-    align-items: flex-end;
-    height: 100px;
-    margin-top: 22px;
-    margin: 22px 0 15px 0;
-    img {
-      margin-left: 48px;
-    }
+
   }
 
   .card-info {
@@ -56,18 +51,44 @@ const Card = styled.div`
       font-size: 14px;
       font-weight: 700;
       margin-left: 11px;
+
+      @media (min-width: 900px) {
+        font-size: ${({ small }) => (small ? "14px" : "21px")};
+      }
     }
 
     .description-list {
       width: 102px;
       height: auto;
       margin-left: 7px;
+      @media (min-width: 900px) {
+        width: 195px;
+        margin-left: 28px;
+      }
       li {
         font-size: 10px;
         line-height: 18px;
+
+        @media (min-width: 900px) {
+          font-size: 14px;
+        }
       }
     }
   }
 `;
 
-export { Card };
+export const CardIcon = styled.div`
+  display: flex;
+  align-items: flex-end;
+  height: 108px;
+  margin-top: 22px;
+  margin: 22px 0 15px 0;
+
+  img {
+    margin-left: auto;
+    @media (min-width: 900px) {
+      width: 128px;
+      height: 100%;
+    }
+  }
+`;

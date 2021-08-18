@@ -39,7 +39,7 @@ const Login = () => {
           <S.OptionsButtons>
             <Button>Entrar</Button>
 
-            <S.CreateAccount>Criar Conta</S.CreateAccount>
+            <S.CreateAccount to="/cadastro">Criar Conta</S.CreateAccount>
 
             <Button color="#389674">Pesquisar Instituições</Button>
           </S.OptionsButtons>
