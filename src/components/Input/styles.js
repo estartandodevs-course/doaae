@@ -3,7 +3,7 @@ import styled from "styled-components";
 const InputElement = styled.div`
   // Estilização da div que segura o Input e Label
   position: relative;
-  width: ${(props) => (props.width ? `${props.width}px` : "100%")};
+  width: ${({ width }) => width || "100%"};
   height: 3rem;
   font-family: "Poppins";
   font-size: 1.125rem;
@@ -26,7 +26,7 @@ const InputElement = styled.div`
     top: 0;
     left: 0;
     border: 2px solid;
-    border-color: ${(props) => (props.error !== null ? "#af4242" : "#389674")};
+    border-color: ${({ error }) => (error !== null ? "#af4242" : "#389674")};
     border-radius: 0.625rem;
     width: 100%;
     height: 100%;
@@ -43,13 +43,13 @@ const InputElement = styled.div`
 
   .input-form:focus {
     border: 3px solid;
-    border-color: ${(props) => (props.error !== null ? "#af4242" : "#389674")};
+    border-color: ${({ error }) => (error !== null ? "#af4242" : "#389674")};
   }
 
   .label-form {
     font-family: inherit;
     font-weight: 300;
-    color: ${(props) => (props.error !== null ? "#af4242" : "#393939")};
+    color: ${({ error }) => (error !== null ? "#af4242" : "#393939")};
     font-size: inherit;
 
     position: absolute;
@@ -67,7 +67,7 @@ const InputElement = styled.div`
     top: -0.7rem;
     left: 0.6rem;
     font-weight: 500;
-    color: ${(props) => (props.error !== null ? "#af4242" : "#389674")};
+    color: ${({ error }) => (error !== null ? "#af4242" : "#389674")};
     background-color: #fff;
   }
 
