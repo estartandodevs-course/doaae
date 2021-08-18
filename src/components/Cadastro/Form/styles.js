@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Form = styled.form`
-  width: auto;
   padding-top: 26px;
   @media (min-width: 768px) {
     width: 308px;
