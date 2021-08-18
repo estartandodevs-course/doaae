@@ -9,33 +9,38 @@ import { Info } from "../../components/SplashScreen/Info";
 const SplashScreen = () => {
   return (
     <S.Container>
-      <S.HeaderBackground>
-        <img src={Image} alt="Pessoas  voluntarias" />
-        <S.Logo className="logo" src={Logo} alt="Logo doaae" />
-      </S.HeaderBackground>
+      <S.ContainerMobile>
+        <S.HeaderBackground>
+          <S.Background src={Image} alt="Pessoas  voluntarias" />
+          <S.Logo className="logo" src={Logo} alt="Logo doaae" />
+        </S.HeaderBackground>
 
-      <S.ContainerInfo>
-        <Info
-          image={MapPin}
-          text="<p>
+        <S.ContainerInfo>
+          <Info
+            image={MapPin}
+            text="<p>
           Encontre o ponto de coleta mais
           <strong> próximo </strong>
           de você.
         </p>"
-        />
-        <Info
-          image={Box}
-          text="<p>
+          />
+          <Info
+            image={Box}
+            text="<p>
           Doar contribui com a <strong>transformação</strong> para o melhor da <strong>sociedade</strong>, das <strong>instituições</strong> e, principalmente das <strong>pessoas</strong>.
         </p>"
-        />
-      </S.ContainerInfo>
+          />
+        </S.ContainerInfo>
 
-      <LoadingSpin />
+        <LoadingSpin />
 
-      <S.Footer className="footer">
-        <p>© Estartando Devs - 2021</p>
-      </S.Footer>
+        <S.Footer className="footer">
+          <p>© Estartando Devs - 2021</p>
+        </S.Footer>
+      </S.ContainerMobile>
+      <S.ContainerDesktop>
+        <LoadingSpin />
+      </S.ContainerDesktop>
     </S.Container>
   );
 };
