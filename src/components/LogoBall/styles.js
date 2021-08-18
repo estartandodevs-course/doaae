@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const LogoBallStyled = styled.div``;
 
@@ -6,7 +7,7 @@ export const BallTop = styled.div`
   position: absolute;
   border-radius: 50%;
   top: -497px;
-  left: -100px;
+  left: -144px;
   width: 599px;
   height: 599px;
   background-color: #47c0a1;
@@ -34,3 +35,7 @@ export const ContainerLogo = styled.div`
     }
   }
 `;
+
+export const GoBack = styled(Link)``;
+
+export const BackIcon = styled.img``;
