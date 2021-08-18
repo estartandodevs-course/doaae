@@ -1,5 +1,6 @@
 import * as S from "./styles";
 import { Logo } from "../../components/Shared/Logo";
+import { LogoBall } from "../../components/LogoBall";
 import { Input, InputPassword } from "../../components/Input";
 import { Button } from "../../components/Button";
 import DesktopImage from "../../assets/img/login-background-desktop.png";
@@ -10,11 +11,7 @@ const Login = () => {
   return (
     <S.Container>
       <S.ContainerLogin>
-        <S.BallTop />
-
-        <S.ContainerLogo>
-          <Logo />
-        </S.ContainerLogo>
+        <LogoBall />
         <S.Form>
           <S.ContainerTitle>
             <S.Title>Login</S.Title>
@@ -42,7 +39,7 @@ const Login = () => {
           <S.OptionsButtons>
             <Button>Entrar</Button>
 
-            <S.CreateAccount>Criar Conta</S.CreateAccount>
+            <S.CreateAccount to="/cadastro">Criar Conta</S.CreateAccount>
 
             <Button color="#389674">Pesquisar Instituições</Button>
           </S.OptionsButtons>

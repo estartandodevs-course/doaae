@@ -3,34 +3,16 @@ import { Link } from "react-router-dom";
 
 export const Container = styled.main`
   width: 100%;
+
   max-width: 1700px;
   margin: 0 auto;
   min-height: 100vh;
   padding: 0 30px;
   overflow: hidden;
+  box-sizing: border-box;
   @media (min-width: 800px) {
     display: flex;
     padding: inherit;
-  }
-`;
-
-export const BallTop = styled.div`
-  position: absolute;
-  border-radius: 50%;
-  top: -497px;
-  left: -100px;
-  width: 599px;
-  height: 599px;
-  background-color: #47c0a1;
-  z-index: -1;
-
-  @media (min-width: 468px) {
-    display: none;
-  }
-  @media (min-width: 800px) {
-    display: block;
-    top: -441px;
-    left: -103px;
   }
 `;
 
@@ -44,20 +26,8 @@ export const BallBottom = styled.div`
   border-radius: 50%;
 `;
 
-export const ContainerLogo = styled.div`
-  display: flex;
-  justify-content: center;
-
-  > img {
-    margin-top: 10px;
-
-    @media (min-width: 800px) {
-      margin-top: 40px;
-    }
-  }
-`;
-
 export const Form = styled.form`
+  width: 308px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,6 +52,7 @@ export const Title = styled.h1`
 `;
 
 export const Inputs = styled.div`
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -120,6 +91,9 @@ export const CreateAccount = styled(Link)`
 export const ContainerLogin = styled.div`
   width: auto;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @media (min-width: 800px) {
     width: 400px;
     padding-top: 25px;
