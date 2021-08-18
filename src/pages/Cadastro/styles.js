@@ -8,3 +8,15 @@ export const Profiles = styled.div`
   display: flex;
   gap: 23px;
 `;
+
+export const NavBarContainer = styled.div`
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const ContainerDescriptionMobile = styled.div`
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;

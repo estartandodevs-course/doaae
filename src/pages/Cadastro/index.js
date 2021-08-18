@@ -36,8 +36,12 @@ const Cadastro = () => {
 
   return (
     <S.Container>
-      <ContainerNavbar>Cadastro</ContainerNavbar>
-      <Description small={state.close} />
+      <S.NavBarContainer>
+        <ContainerNavbar>Cadastro</ContainerNavbar>
+      </S.NavBarContainer>
+      <S.ContainerDescriptionMobile>
+        <Description small={state.close} />
+      </S.ContainerDescriptionMobile>
       <S.Profiles>
         <CardProfile
           onClick={() => dispatch({ type: "Doador" })}

@@ -3,7 +3,8 @@ import styled from "styled-components";
 const InputElement = styled.div`
   // Estilização da div que segura o Input e Label
   position: relative;
-  width: ${(props) => (props.width ? `${props.width}px` : "309px")};
+  width: ${(props) => (props.width ? `${props.width}px` : "100%")};
+  max-width: 308px;
   height: 3rem;
   font-family: "Poppins";
   font-size: 1.125rem;

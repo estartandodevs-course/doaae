@@ -43,7 +43,9 @@ const Form = () => {
         label="Confirmar senha"
         errorMessage={null}
       />
-      <Button>Avançar</Button>
+      <S.ContainerButton>
+        <Button width="100%">Avançar</Button>
+      </S.ContainerButton>
     </S.Form>
   );
 };

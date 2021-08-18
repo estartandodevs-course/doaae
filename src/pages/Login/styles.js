@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 
 export const Container = styled.main`
   width: 100%;
+
   max-width: 1700px;
   margin: 0 auto;
   min-height: 100vh;
   padding: 0 30px;
   overflow: hidden;
+  box-sizing: border-box;
   @media (min-width: 800px) {
     display: flex;
     padding: inherit;
@@ -25,6 +27,7 @@ export const BallBottom = styled.div`
 `;
 
 export const Form = styled.form`
+  width: 308px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,6 +52,7 @@ export const Title = styled.h1`
 `;
 
 export const Inputs = styled.div`
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -87,6 +91,9 @@ export const CreateAccount = styled(Link)`
 export const ContainerLogin = styled.div`
   width: auto;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @media (min-width: 800px) {
     width: 400px;
     padding-top: 25px;
