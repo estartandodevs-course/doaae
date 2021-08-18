@@ -6,8 +6,8 @@ export const ButtonStyled = styled(Link)`
   justify-content: center;
   align-items: center;
 
-  width: ${({ width }) => (width ? width : "308px")};
-  height: ${({ height }) => (height ? height : "48px")};
+  width: ${({ width }) => width || "308px"};
+  height: ${({ height }) => height || "48px"};
   background-color: ${({ color }) => color || "#007067"};
   border-radius: 10px;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.18);
