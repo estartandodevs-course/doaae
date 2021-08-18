@@ -14,26 +14,6 @@ export const Container = styled.main`
   }
 `;
 
-export const BallTop = styled.div`
-  position: absolute;
-  border-radius: 50%;
-  top: -497px;
-  left: -100px;
-  width: 599px;
-  height: 599px;
-  background-color: #47c0a1;
-  z-index: -1;
-
-  @media (min-width: 468px) {
-    display: none;
-  }
-  @media (min-width: 800px) {
-    display: block;
-    top: -441px;
-    left: -103px;
-  }
-`;
-
 export const BallBottom = styled.div`
   position: absolute;
   width: 790px;
@@ -42,19 +22,6 @@ export const BallBottom = styled.div`
   bottom: -411px;
   right: -454px;
   border-radius: 50%;
-`;
-
-export const ContainerLogo = styled.div`
-  display: flex;
-  justify-content: center;
-
-  > img {
-    margin-top: 10px;
-
-    @media (min-width: 800px) {
-      margin-top: 40px;
-    }
-  }
 `;
 
 export const Form = styled.form`
