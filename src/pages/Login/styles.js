@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Container = styled.main`
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
   min-height: 100vh;
   padding: 0 30px;
   overflow: hidden;
@@ -12,7 +15,7 @@ export const Container = styled.main`
 `;
 
 export const BallTop = styled.div`
-  position: fixed;
+  position: absolute;
   border-radius: 50%;
   top: -497px;
   left: -100px;
@@ -32,7 +35,7 @@ export const BallTop = styled.div`
 `;
 
 export const BallBottom = styled.div`
-  position: fixed;
+  position: absolute;
   width: 790px;
   height: 580px;
   background-color: #47c0a1;
@@ -116,7 +119,7 @@ export const CreateAccount = styled(Link)`
 
 export const ContainerLogin = styled.div`
   width: auto;
-
+  position: relative;
   @media (min-width: 800px) {
     width: 400px;
     padding-top: 25px;
@@ -154,7 +157,7 @@ export const Image = styled.img`
 `;
 
 export const ContainerLogoBottom = styled.div`
-  position: fixed;
+  position: absolute;
   bottom: 5px;
   right: 0;
   z-index: 2;
