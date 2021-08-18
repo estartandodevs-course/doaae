@@ -83,6 +83,9 @@ export const CardIcon = styled.div`
   height: 108px;
   margin-top: 22px;
   margin: 22px 0 15px 0;
+  @media (min-width: 900px) {
+    margin-bottom: 0;
+  }
 
   img {
     margin-left: auto;
