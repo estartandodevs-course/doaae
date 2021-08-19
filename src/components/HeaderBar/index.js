@@ -3,6 +3,7 @@ import * as S from "./styles";
 import ProfileIcon from "../../assets/icons/profile-icon.svg";
 import DoorExit from "../../assets/icons/door-exit.svg";
 import BackIcon from "../../assets/icons/back-icon.svg";
+import { SearchInput } from "../SearchInput";
 
 const HeaderBar = ({ home, profileImage = null, isLogged, children }) => {
   const { goBack } = useHistory();
@@ -35,17 +36,24 @@ const HeaderBar = ({ home, profileImage = null, isLogged, children }) => {
     );
   }
   return (
-    <S.Container>
-      <S.ContainerExit>
-        {!home && (
-          <S.BackLink onClick={goBack}>
-            <S.Back src={BackIcon} />
-          </S.BackLink>
-        )}
-        <S.LogoText>{children}</S.LogoText>
-      </S.ContainerExit>
-      <S.Login to="/login">Fazer login</S.Login>
-    </S.Container>
+    <>
+      <S.Container>
+        <S.ContainerExit>
+          {!home && (
+            <S.BackLink onClick={goBack}>
+              <S.Back src={BackIcon} />
+            </S.BackLink>
+          )}
+          <S.LogoText>{children}</S.LogoText>
+          <SearchInput />
+        </S.ContainerExit>
+
+        <S.Login to="/login">Fazer login</S.Login>
+      </S.Container>
+      <S.PositionInputMobile>
+        <SearchInput />
+      </S.PositionInputMobile>
+    </>
   );
 };
 
