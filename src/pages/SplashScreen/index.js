@@ -1,12 +1,19 @@
-import * as S from "./styles";
+import { useHistory } from "react-router-dom";
 import Image from "../../assets/img/people-background.png";
 import Logo from "../../assets/icons/logo.svg";
 import MapPin from "../../assets/icons/map-pin.svg";
 import Box from "../../assets/icons/shipping-box.svg";
 import { LoadingSpin } from "../../components/Shared/LoadingSpin";
 import { Info } from "../../components/SplashScreen/Info";
+import * as S from "./styles";
 
 const SplashScreen = () => {
+  const history = useHistory();
+
+  setTimeout(() => {
+    history.push("/login");
+  }, 2000);
+
   return (
     <S.Container>
       <S.ContainerMobile>
