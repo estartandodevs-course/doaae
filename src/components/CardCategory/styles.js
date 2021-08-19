@@ -33,3 +33,8 @@ export const NameCategory = styled.span`
     line-height: 19px;
   }
 `;
+
+export const LimitBreak = styled.div`
+  max-width: 132px;
+  text-align: center;
+`;
