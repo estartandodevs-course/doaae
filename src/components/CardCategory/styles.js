@@ -11,7 +11,8 @@ export const ContainerCard = styled.section`
   border-radius: 10px;
   box-shadow: 0px 4px 16px rgb(0 0 0 / 18%);
   margin: 12px 2px;
-  @media (max-width: 680px) {
+
+  @media (max-width: 900px) {
     flex-direction: column;
     width: 150px;
     padding: 12px 0;
@@ -29,7 +30,7 @@ export const NameCategory = styled.span`
   font-size: 22.73px;
   line-height: 27px;
 
-  @media (max-width: 680px) {
+  @media (max-width: 900px) {
     font-size: 16px;
     line-height: 19px;
   }
