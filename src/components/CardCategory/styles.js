@@ -25,7 +25,7 @@ export const ImageCategoryCard = styled.img`
   object-fit: contain;
 `;
 
-export const NameCategory = styled.span`
+export const NameCategory = styled.p`
   font-weight: bold;
   font-size: 22.73px;
   line-height: 27px;
