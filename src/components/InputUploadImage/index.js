@@ -4,7 +4,6 @@ import MoreIcon from "../../assets/icons/more-icon.svg";
 const InputUploadImage = () => {
   return (
     <S.Container>
-      <S.Text>Upload de Imagem</S.Text>
       <S.InputContainer htmlFor="file">
         <S.InputImage src={MoreIcon} />
         <S.InputFile
@@ -14,6 +13,7 @@ const InputUploadImage = () => {
           accept="image/*"
         />
       </S.InputContainer>
+      <S.Text>Upload de Imagem</S.Text>
     </S.Container>
   );
 };
