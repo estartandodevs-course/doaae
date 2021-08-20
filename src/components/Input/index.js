@@ -4,10 +4,24 @@ import EyeSlashed from "../../assets/icons/eye-slashed.svg";
 import Eye from "../../assets/icons/eye.svg";
 
 // Input genérico
-const Input = ({ inputType, id, htmlFor, label, errorMessage, width }) => {
+const Input = ({
+  inputType,
+  id,
+  htmlFor,
+  label,
+  errorMessage,
+  width,
+  value,
+}) => {
   return (
     <InputElement error={errorMessage} width={width}>
-      <input className="input-form" type={inputType} id={id} placeholder=" " />
+      <input
+        className="input-form"
+        type={inputType}
+        id={id}
+        placeholder=" "
+        value={value}
+      />
       <label className="label-form" htmlFor={htmlFor}>
         {label}
       </label>
