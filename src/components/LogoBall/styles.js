@@ -31,13 +31,15 @@ export const ContainerLogo = styled.div`
     margin-top: 10px;
 
     @media (min-width: 800px) {
-      margin-top: 40px;
+      margin-top: 70px;
     }
   }
 `;
 
 export const GoBack = styled(Link)`
   position: absolute;
+  top: 48px;
+  left: 40px;
   width: 38px;
   height: 38px;
 `;

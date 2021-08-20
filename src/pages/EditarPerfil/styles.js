@@ -1,0 +1,111 @@
+import styled from "styled-components";
+
+export const ContainerEditarPerfil = styled.section`
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  max-width: 1700px;
+
+  margin: 0 auto;
+  @media (max-width: 960px) {
+    flex-direction: column;
+    padding: 35px 30px;
+    box-sizing: border-box;
+  }
+`;
+
+export const ContainerInfo = styled.section`
+  width: 460px;
+
+  h1 {
+    color: #388596;
+    font-size: 36px;
+  }
+
+  p {
+    width: 280px;
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  @media (max-width: 960px) {
+    display: none;
+  }
+`;
+
+export const ContainerText = styled.div`
+  position: relative;
+  height: 430px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 43px;
+
+  &:after {
+    position: absolute;
+    right: 0;
+    content: "";
+    width: 2px;
+    height: 441px;
+    background: linear-gradient(
+      180deg,
+      rgba(71, 192, 161, 0) 0%,
+      #47c0a1 30.21%,
+      rgba(71, 192, 161, 0.929293) 70.31%,
+      rgba(255, 255, 255, 0) 100%,
+      rgba(71, 192, 161, 0) 100%
+    );
+  }
+`;
+
+export const ContainerForm = styled.section`
+  max-width: 600px;
+  margin: 75px 0 0 100px;
+  display: flex;
+  @media (max-width: 960px) {
+    margin: 0;
+    align-self: center;
+    flex-direction: column;
+  }
+`;
+
+export const Text = styled.p`
+  display: none;
+  font-size: 18px;
+  margin-bottom: 20px;
+  @media (max-width: 960px) {
+    display: block;
+  }
+`;
+
+export const Form = styled.form`
+  display: flex;
+
+  @media (max-width: 580px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+  }
+`;
+
+export const ContainerUploadImage = styled.div`
+  width: 175px;
+`;
+
+export const ContainerInputs = styled.div`
+  width: 312px;
+  margin-left: 63px;
+
+  @media (max-width: 580px) {
+    margin: 0;
+  }
+`;
+
+export const ContainerHeader = styled.header`
+  @media (min-width: 960px) {
+    display: none;
+  }
+`;

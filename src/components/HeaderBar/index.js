@@ -5,7 +5,7 @@ import DoorExit from "../../assets/icons/door-exit.svg";
 import BackIcon from "../../assets/icons/back-icon.svg";
 import { SearchInput } from "../SearchInput";
 
-const HeaderBar = ({ home, profileImage = null, isLogged, children }) => {
+const HeaderBar = ({ home, profileImage = null, isLogged, children, edit }) => {
   const { goBack } = useHistory();
 
   if (isLogged) {
@@ -23,15 +23,21 @@ const HeaderBar = ({ home, profileImage = null, isLogged, children }) => {
           )}
           <S.LogoText>{children}</S.LogoText>
         </S.ContainerExit>
-        {profileImage ? (
-          <S.Profile to="profile">
-            <S.ProfileIcon src={profileImage} />
-          </S.Profile>
-        ) : (
-          <S.Profile to="profile">
-            <S.ProfileIcon src={ProfileIcon} />
-          </S.Profile>
-        )}
+        <>
+          {!edit && (
+            <>
+              {profileImage ? (
+                <S.Profile to="profile">
+                  <S.ProfileIcon src={profileImage} />
+                </S.Profile>
+              ) : (
+                <S.Profile to="profile">
+                  <S.ProfileIcon src={ProfileIcon} />
+                </S.Profile>
+              )}
+            </>
+          )}
+        </>
       </S.Container>
     );
   }
