@@ -22,7 +22,7 @@ export const ContainerCard = styled.section`
 export const ImageCategoryCard = styled.img`
   width: 94px;
   height: 94px;
-  object-fit: cover;
+  object-fit: contain;
 `;
 
 export const NameCategory = styled.span`
