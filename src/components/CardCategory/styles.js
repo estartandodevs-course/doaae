@@ -22,10 +22,10 @@ export const ContainerCard = styled.section`
 export const ImageCategoryCard = styled.img`
   width: 94px;
   height: 94px;
-  object-fit: cover;
+  object-fit: contain;
 `;
 
-export const NameCategory = styled.span`
+export const NameCategory = styled.p`
   font-weight: bold;
   font-size: 22.73px;
   line-height: 27px;
