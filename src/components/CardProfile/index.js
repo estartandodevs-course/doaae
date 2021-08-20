@@ -1,4 +1,4 @@
-import { Card } from "./styles";
+import * as S from "./styles";
 
 const CardProfile = ({
   cardName,
@@ -12,7 +12,7 @@ const CardProfile = ({
 }) => {
   if (small) {
     return (
-      <Card
+      <S.Card
         backgroundColor={backgroundColor}
         select={select}
         onClick={onClick}
@@ -24,14 +24,14 @@ const CardProfile = ({
         <div className="card-info">
           <span className="name">{cardName}</span>
         </div>
-      </Card>
+      </S.Card>
     );
   }
   return (
-    <Card backgroundColor={backgroundColor} select={select} onClick={onClick}>
-      <div className="card-icon">
+    <S.Card backgroundColor={backgroundColor} select={select} onClick={onClick}>
+      <S.CardIcon className="card-icon">
         <img src={img} alt="Icone do perfil" />
-      </div>
+      </S.CardIcon>
       <div className="card-info">
         <span className="name">{cardName}</span>
         <ul
@@ -39,7 +39,7 @@ const CardProfile = ({
           dangerouslySetInnerHTML={{ __html: descriptions }}
         />
       </div>
-    </Card>
+    </S.Card>
   );
 };
 

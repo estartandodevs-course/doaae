@@ -19,6 +19,12 @@ $font-path: "../assets/fonts/";
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "Roboto";
+  src: url("#{$font-path}/Roboto-Light.ttf");
+  font-weight: 300;
+}
+
 /* Poppins */
 @font-face {
   font-family: "Poppins";
