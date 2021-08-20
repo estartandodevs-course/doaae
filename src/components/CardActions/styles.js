@@ -1,15 +1,19 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  max-width: 100%;
   height: ${({ small }) => (small ? "347px" : "141px")};
   transition: height 0.4s ease-out;
+  overflow-wrap: break-word;
 `;
 
 export const ContainerCape = styled.div`
   position: relative;
 `;
 
-export const Cape = styled.img``;
+export const Cape = styled.img`
+  width: 100%;
+`;
 
 export const Category = styled.span`
   position: absolute;
@@ -25,7 +29,7 @@ export const Category = styled.span`
 `;
 
 export const ContainerInfo = styled.div`
-  width: 315px;
+  width: 100%;
   padding: 11px 15px 11px 8px;
   box-sizing: border-box;
   border-left: 2px solid #007067;
@@ -36,7 +40,7 @@ export const ContainerInfo = styled.div`
 `;
 
 export const Title = styled.h1`
-  width: 250px;
+  max-width: 250px;
   font-size: 16px;
   font-weight: 700;
   line-height: 19px;
@@ -50,7 +54,7 @@ export const Description = styled.p`
 `;
 
 export const Location = styled.h1`
-  width: 250px;
+  max-width: 250px;
   font-size: 16px;
   font-weight: 700;
   line-height: 19px;
