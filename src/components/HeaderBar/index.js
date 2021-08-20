@@ -24,9 +24,7 @@ const HeaderBar = ({ home, profileImage = null, isLogged, children, edit }) => {
           <S.LogoText>{children}</S.LogoText>
         </S.ContainerExit>
         <>
-          {edit ? (
-            <></>
-          ) : (
+          {!edit && (
             <>
               {profileImage ? (
                 <S.Profile to="profile">
