@@ -19,7 +19,7 @@ export const ContainerNavigations = styled.section`
 `;
 
 export const ContainerNavigationCategory = styled.section`
-  max-width: 500px;
+  max-width: 629px;
   min-width: 280px;
 
   @media (max-width: 900px) {
@@ -34,7 +34,18 @@ export const ListCardsByCategory = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+
   margin-top: 20px;
+
+  @media (max-width: 985px) {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  @media (max-width: 546px) {
+    justify-content: space-around;
+  }
 `;
 
 export const DivisionFromNavigationMap = styled.aside`

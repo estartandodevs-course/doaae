@@ -4,15 +4,15 @@ export const ContainerCard = styled.section`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 235px;
   max-width: 300px;
+  width: 280px;
   min-width: 150px;
   height: 123px;
   border-radius: 10px;
   box-shadow: 0px 4px 16px rgb(0 0 0 / 18%);
   margin: 12px 2px;
 
-  @media (max-width: 900px) {
+  @media (max-width: 989px) {
     flex-direction: column;
     width: 150px;
     padding: 12px 0;
@@ -30,7 +30,7 @@ export const NameCategory = styled.p`
   font-size: 22.73px;
   line-height: 27px;
 
-  @media (max-width: 900px) {
+  @media (max-width: 989px) {
     font-size: 16px;
     line-height: 19px;
   }
