@@ -6,7 +6,7 @@ const ButtonMap = ({ onClick }) => {
   return (
     <S.Container onClick={onClick}>
       <S.MapIcon src={MapIcon} />
-      <S.ContainerText to="mapa">
+      <S.ContainerText>
         <S.Text>Buscar por instituições próximas pelo mapa</S.Text>
         <S.NextIcon src={NextLink} />
       </S.ContainerText>
