@@ -5,7 +5,7 @@ export const ContainerCard = styled.section`
   justify-content: space-evenly;
   align-items: center;
   max-width: 300px;
-  width: 280px;
+  width: 250px;
   min-width: 150px;
   height: 123px;
   border-radius: 10px;

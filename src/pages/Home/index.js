@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { HeaderBar } from "../../components/HeaderBar";
 import { CardCategory } from "../../components/CardCategory";
 import { dataListCategory } from "../../mock/naveCategories";
@@ -7,13 +8,19 @@ import Map from "../../assets/img/map-image.png";
 import * as S from "./styles";
 
 const Home = () => {
+  const history = useHistory();
+
+  const redirectFromPageMap = () => {
+    return history.push("/mapa");
+  };
+
   return (
     <S.ContainerMasterHome>
       <HeaderBar />
       <S.ContainerNavigationMobile>
         <div>
           <h1>Navegue pelo mapa</h1>
-          <ButtonMap />
+          <ButtonMap onClick={redirectFromPageMap} />
         </div>
       </S.ContainerNavigationMobile>
       <S.ContainerNavigations>
