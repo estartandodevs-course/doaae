@@ -3,6 +3,7 @@ import { HeaderBar } from "../../components/HeaderBar";
 import { Input } from "../../components/Input";
 import { CheckBox } from "../../components/Checkbox";
 import { Button } from "../../components/Button";
+import { LogoBall } from "../../components/LogoBall";
 
 const AgendarDoacao = () => {
   const DATA_USER = {
@@ -16,47 +17,57 @@ const AgendarDoacao = () => {
 
   return (
     <S.Container>
-      <S.Header>
-        <HeaderBar
-          isLogged={DATA_USER.isLogged}
-          profileImage={DATA_USER.profileImage}
-        >
-          Agendar doação
-        </HeaderBar>
-      </S.Header>
-      <S.Text>Preencha os dados de acordo com sua doação</S.Text>
-      <S.SectionTitle>Agendando doação para ONG Mais</S.SectionTitle>
+      <S.ContainerHeader>
+        <S.Header>
+          <HeaderBar
+            isLogged={DATA_USER.isLogged}
+            profileImage={DATA_USER.profileImage}
+          >
+            Agendar doação
+          </HeaderBar>
+        </S.Header>
+        <p>Preencha os dados de acordo com sua doação</p>
+        <h1>Agendando doação para ONG Mais</h1>
+      </S.ContainerHeader>
+      <S.ContainerInfo>
+        <LogoBall backTo="instituicoes" />
+        <S.ContainerText>
+          <h1>Agende uma doação</h1>
+          <p>Preencha os dados de acordo com sua doação</p>
+        </S.ContainerText>
+      </S.ContainerInfo>
 
-      <S.Form onSubmit={submit}>
-        <Input
-          inputType="text"
-          id="itens"
-          htmlFor="itens"
-          label="Itens para doar"
-          errorMessage={null}
-        />
+      <S.ContainerMasterForm>
+        <S.ContainerForm>
+          <S.Form onSubmit={submit}>
+            <Input
+              inputType="text"
+              id="itens"
+              htmlFor="itens"
+              label="Itens para doar"
+              errorMessage={null}
+            />
 
-        <Input
-          inputType="text"
-          id="detalhes"
-          htmlFor="detalhes"
-          label="Detalhes"
-          errorMessage={null}
-        />
-        <S.Check>
-          <CheckBox />
-        </S.Check>
+            <textarea
+              name="descricao"
+              id="descricao"
+              placeholder="Detalhes (se preferir, dê mais detalhes sobre sua doação)"
+            />
 
-        <S.SectionTitle>
-          Quando seria um bom dia para você ir entregar a doação?
-        </S.SectionTitle>
+            <S.Check>
+              <CheckBox />
+            </S.Check>
 
-        <S.DateContainer>
-          <Input inputType="date" errorMessage={null} />
-        </S.DateContainer>
+            <span>Quando seria um bom dia para você ir entregar a doação?</span>
 
-        <Button>Avançar</Button>
-      </S.Form>
+            <S.DateContainer>
+              <Input inputType="date" errorMessage={null} />
+            </S.DateContainer>
+
+            <Button>Avançar</Button>
+          </S.Form>
+        </S.ContainerForm>
+      </S.ContainerMasterForm>
     </S.Container>
   );
 };
