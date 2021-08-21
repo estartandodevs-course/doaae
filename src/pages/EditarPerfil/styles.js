@@ -9,7 +9,7 @@ export const ContainerEditarPerfil = styled.section`
   max-width: 1700px;
 
   margin: 0 auto;
-  @media (max-width: 960px) {
+  @media (max-width: 1015px) {
     flex-direction: column;
     padding: 35px 30px;
     box-sizing: border-box;
@@ -30,7 +30,7 @@ export const ContainerInfo = styled.section`
     line-height: 26px;
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 1015px) {
     display: none;
   }
 `;
@@ -62,11 +62,13 @@ export const ContainerText = styled.div`
 `;
 
 export const ContainerForm = styled.section`
-  max-width: 600px;
-  margin: 75px 0 0 100px;
+  width: calc(100% - 460px);
   display: flex;
-  @media (max-width: 960px) {
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 1015px) {
     margin: 0;
+    width: 100%;
     align-self: center;
     flex-direction: column;
   }
@@ -76,7 +78,7 @@ export const Text = styled.p`
   display: none;
   font-size: 18px;
   margin-bottom: 20px;
-  @media (max-width: 960px) {
+  @media (max-width: 1015px) {
     display: block;
   }
 `;
@@ -105,7 +107,7 @@ export const ContainerInputs = styled.div`
 `;
 
 export const ContainerHeader = styled.header`
-  @media (min-width: 960px) {
+  @media (min-width: 1015px) {
     display: none;
   }
 `;
