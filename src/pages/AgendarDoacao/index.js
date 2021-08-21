@@ -6,25 +6,11 @@ import { Button } from "../../components/Button";
 import { LogoBall } from "../../components/LogoBall";
 
 const AgendarDoacao = () => {
-  const DATA_USER = {
-    isLogged: true,
-    profileImage: undefined,
-  };
-
-  const submit = (e) => {
-    e.preventDefault();
-  };
-
   return (
     <S.Container>
       <S.ContainerHeader>
         <S.Header>
-          <HeaderBar
-            isLogged={DATA_USER.isLogged}
-            profileImage={DATA_USER.profileImage}
-          >
-            Agendar doação
-          </HeaderBar>
+          <HeaderBar isLogged>Agendar doação</HeaderBar>
         </S.Header>
         <p>Preencha os dados de acordo com sua doação</p>
         <h1>Agendando doação para ONG Mais</h1>
@@ -39,7 +25,7 @@ const AgendarDoacao = () => {
 
       <S.ContainerMasterForm>
         <S.ContainerForm>
-          <S.Form onSubmit={submit}>
+          <S.Form>
             <Input
               inputType="text"
               id="itens"
