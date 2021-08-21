@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   position: relative;
   display: flex;
   align-items: center;
   height: 67px;
+  cursor: pointer;
 `;
 
-export const ContainerText = styled(Link)`
+export const ContainerText = styled.div`
   height: 53px;
   display: flex;
   justify-content: flex-end;
