@@ -5,6 +5,7 @@ import Cadastro from "./Cadastro";
 import AgendarDoacao from "./AgendarDoacao";
 import EditarPerfil from "./EditarPerfil";
 import PageMapMobile from "./PageMapMobile";
+import PageScheduleDonation from "./PageScheduledDonation";
 
 export {
   Home,
@@ -14,4 +15,5 @@ export {
   AgendarDoacao,
   EditarPerfil,
   PageMapMobile,
+  PageScheduleDonation,
 };
