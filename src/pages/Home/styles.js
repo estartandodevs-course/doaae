@@ -46,6 +46,10 @@ export const ListCardsByCategory = styled.section`
   @media (max-width: 546px) {
     justify-content: space-around;
   }
+
+  @media (max-width: 546px) {
+    gap: initial;
+  }
 `;
 
 export const DivisionFromNavigationMap = styled.aside`
