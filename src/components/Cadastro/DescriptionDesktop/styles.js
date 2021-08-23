@@ -19,6 +19,7 @@ export const DescriptionText = styled.div`
 export const Text = styled.p`
   font-size: 22px;
   line-height: 26px;
+  width: 263px;
   margin-top: ${({ margin }) => margin};
   margin-bottom: ${({ margin }) => margin};
 `;
