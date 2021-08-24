@@ -33,7 +33,6 @@ export const Form = styled.form`
   align-items: center;
   margin-top: 67px;
   position: relative;
-  padding: 0 30px;
 `;
 
 export const ContainerTitle = styled.div`
@@ -96,7 +95,6 @@ export const ContainerLogin = styled.div`
   align-items: center;
   @media (min-width: 800px) {
     width: 400px;
-    padding-top: 25px;
   }
 `;
 
@@ -109,7 +107,7 @@ export const ContainerImage = styled.div`
   &::before {
     position: absolute;
     top: 0;
-    left: 0;
+    left: -1px;
     content: "";
     width: 160px;
     height: 100vh;
@@ -128,6 +126,7 @@ export const ContainerImage = styled.div`
 export const Image = styled.img`
   width: 100%;
   height: 100%;
+  object-fit: cover;
 `;
 
 export const ContainerLogoBottom = styled.div`

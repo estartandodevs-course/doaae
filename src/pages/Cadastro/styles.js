@@ -12,6 +12,7 @@ export const Container = styled.main`
   align-items: center;
   flex-direction: column;
   @media (min-width: 768px) {
+    padding: 0;
     max-width: 1700px;
     position: relative;
     display: flex;
@@ -26,10 +27,10 @@ export const Profiles = styled.div`
 `;
 
 export const ContainerForm = styled.div`
-  max-width: 315px;
   @media (min-width: 768px) {
+    width: calc(100% - 400px);
+    height: 700px;
     max-width: inherit;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,22 +42,25 @@ export const ContainerLeft = styled.div`
   display: none;
   @media (min-width: 768px) {
     display: block;
+    width: 400px;
   }
 `;
 
 export const ContainerDescription = styled.div`
-  width: 310px;
-  margin-top: 50px;
-  padding-left: 34px;
+  height: 441px;
+  padding-left: 60px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-  &::after {
+  &::before {
     position: absolute;
-    top: -70px;
+    top: 0;
     right: 0;
     content: "";
     width: 2px;
-    height: 442px;
+    height: 100%;
     background: linear-gradient(
       180deg,
       rgba(71, 192, 161, 0) 0%,
@@ -65,9 +69,6 @@ export const ContainerDescription = styled.div`
       rgba(255, 255, 255, 0) 100%,
       rgba(71, 192, 161, 0) 100%
     );
-  }
-  @media (min-width: 2000px) {
-    margin-top: 120px;
   }
 `;
 

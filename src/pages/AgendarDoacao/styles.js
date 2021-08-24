@@ -64,7 +64,7 @@ export const DateContainer = styled.div`
 export const ContainerMasterForm = styled.section`
   @media (min-width: 720px) {
     max-width: 100%;
-    width: 960px;
+    width: calc(100% - 400px);
     min-width: 500px;
     display: flex;
     justify-content: center;
@@ -102,10 +102,6 @@ export const ContainerInfo = styled.section`
 
   @media (max-width: 945px) {
     display: none;
-  }
-
-  @media (max-width: 1200px) {
-    padding-left: 30px;
   }
 
   &:after {
