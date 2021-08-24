@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   max-width: 100%;
-  height: ${({ small }) => (small ? "347px" : "141px")};
+  max-height: ${({ small }) => (small ? "347px" : "163px")};
   transition: height 0.4s ease-out;
   overflow-wrap: break-word;
 `;
@@ -13,6 +13,8 @@ export const ContainerCape = styled.div`
 
 export const Cape = styled.img`
   width: 100%;
+  height: 163px;
+  object-fit: cover;
 `;
 
 export const Category = styled.span`

@@ -1,7 +1,13 @@
 import { useState } from "react";
 import * as S from "./styles";
 
-const CardActions = ({ cape, title, description, location, category }) => {
+const CardActions = ({
+  cape,
+  title,
+  description,
+  location,
+  category = "Doação de alimentos",
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
