@@ -19,7 +19,7 @@ export const ContainerAvatar = styled.div``;
 export const Avatar = styled.img`
   width: 88px;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 10px 0 0 10px;
 `;
 
