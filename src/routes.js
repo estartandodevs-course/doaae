@@ -8,6 +8,7 @@ import {
   AgendarDoacao,
   EditarPerfil,
   PageMapMobile,
+  InstitutionalData,
   PageScheduleDonation,
 } from "./pages";
 
@@ -22,6 +23,7 @@ export default function Routes() {
         <Route path="/agendardoacao" component={AgendarDoacao} />
         <Route path="/editarperfil" component={EditarPerfil} />
         <Route path="/mapa" component={PageMapMobile} />
+        <Route path="/instituicoes" component={InstitutionalData} />
         <Route path="/doacaoagendada" component={PageScheduleDonation} />
       </Switch>
     </BrowserRouter>
