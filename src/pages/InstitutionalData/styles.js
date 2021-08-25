@@ -1,22 +1,28 @@
 import styled from "styled-components";
 
 export const SectionOfPage = styled.section`
-  max-width: 100%;
   margin: 0 auto;
-  width: 1700px;
 `;
 
 export const ContainerFromHeader = styled.div`
-  padding: 0 20px;
+  max-width: 100%;
+  width: 1396px;
+  padding: 0 100px;
+  margin: 0 auto;
+
+  @media (max-width: 810px) {
+    padding: 0 20px;
+  }
 `;
 
 export const ImagefromInstitutional = styled.div`
-  display: flex;
-  align-items: flex-end;
-  position: relative;
   width: 100%;
   height: 254px;
-  background-image: ${({ bg }) => (bg ? `url(${bg});` : "none")};
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 `;
 
 export const ContainerInstitutionData = styled.div`
