@@ -8,6 +8,7 @@ export const Container = styled.div`
 
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.18);
   border-radius: 10px;
+  cursor: pointer;
 `;
 
 export const ContainerInfo = styled.div`
@@ -19,7 +20,7 @@ export const ContainerAvatar = styled.div``;
 export const Avatar = styled.img`
   width: 88px;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 10px 0 0 10px;
 `;
 

@@ -10,6 +10,7 @@ import {
   PageMapMobile,
   InstitutionalData,
   PageScheduleDonation,
+  Instituitions,
 } from "./pages";
 
 export default function Routes() {
@@ -23,8 +24,13 @@ export default function Routes() {
         <Route path="/agendardoacao" component={AgendarDoacao} />
         <Route path="/editarperfil" component={EditarPerfil} />
         <Route path="/mapa" component={PageMapMobile} />
-        <Route path="/instituicoes" component={InstitutionalData} />
+        <Route
+          exact
+          path="/instituicoes/:idInst"
+          component={InstitutionalData}
+        />
         <Route path="/doacaoagendada" component={PageScheduleDonation} />
+        <Route exact path="/instituicoes" component={Instituitions} />
       </Switch>
     </BrowserRouter>
   );

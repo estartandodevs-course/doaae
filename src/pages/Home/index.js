@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <S.ContainerMasterHome>
-      <HeaderBar />
+      <HeaderBar home />
       <S.ContainerNavigationMobile>
         <div>
           <h1>Navegue pelo mapa</h1>

@@ -3,8 +3,9 @@ import styled from "styled-components";
 export const Container = styled.div`
   max-width: 100%;
   max-height: ${({ small }) => (small ? "347px" : "163px")};
-  transition: height 0.4s ease-out;
   overflow-wrap: break-word;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
 `;
 
 export const ContainerCape = styled.div`

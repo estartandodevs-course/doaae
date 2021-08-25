@@ -7,6 +7,7 @@ import EditarPerfil from "./EditarPerfil";
 import PageMapMobile from "./PageMapMobile";
 import InstitutionalData from "./InstitutionalData";
 import PageScheduleDonation from "./PageScheduledDonation";
+import Instituitions from "./Institutions";
 
 export {
   Home,
@@ -18,4 +19,5 @@ export {
   PageMapMobile,
   InstitutionalData,
   PageScheduleDonation,
+  Instituitions,
 };

@@ -37,11 +37,9 @@ export const ExitLink = styled(Link)`
 
 export const Back = styled.img``;
 
-export const BackLink = styled.button`
+export const BackLink = styled.div`
   display: flex;
   align-items: center;
-  background-color: transparent;
-  border: none;
   cursor: pointer;
 `;
 

@@ -12,9 +12,10 @@ const CardInstituicao = ({
   cidade,
   diasDaSemana,
   verificada,
+  onClick,
 }) => {
   return (
-    <S.Container>
+    <S.Container onClick={onClick}>
       {verificada && <S.Verificado src={Badge} />}
       <S.ContainerAvatar>
         <S.Avatar src={avatar} alt="Ong profile avatar" />
