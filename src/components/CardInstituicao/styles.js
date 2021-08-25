@@ -8,6 +8,7 @@ export const Container = styled.div`
 
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.18);
   border-radius: 10px;
+  cursor: pointer;
 `;
 
 export const ContainerInfo = styled.div`
