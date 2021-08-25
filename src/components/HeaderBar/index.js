@@ -5,40 +5,53 @@ import DoorExit from "../../assets/icons/door-exit.svg";
 import BackIcon from "../../assets/icons/back-icon.svg";
 import { SearchInput } from "../SearchInput";
 
-const HeaderBar = ({ home, profileImage = null, isLogged, children, edit }) => {
-  const { goBack } = useHistory();
+const HeaderBar = ({
+  home,
+  profileImage = null,
+  isLogged,
+  children,
+  edit,
+  backTo = "/home",
+}) => {
+  const history = useHistory();
+
+  const redirectTo = () => {
+    return history.push(backTo);
+  };
 
   if (isLogged) {
     return (
-      <S.Container>
-        <S.ContainerExit>
-          {home ? (
-            <S.ExitLink to="login">
-              <S.Exit src={DoorExit} />
-            </S.ExitLink>
-          ) : (
-            <S.BackLink onClick={goBack}>
-              <S.Back src={BackIcon} />
-            </S.BackLink>
-          )}
-          <S.LogoText>{children}</S.LogoText>
-        </S.ContainerExit>
-        <>
-          {!edit && (
-            <>
-              {profileImage ? (
-                <S.Profile to="profile">
-                  <S.ProfileIcon src={profileImage} />
-                </S.Profile>
-              ) : (
-                <S.Profile to="profile">
-                  <S.ProfileIcon src={ProfileIcon} />
-                </S.Profile>
-              )}
-            </>
-          )}
-        </>
-      </S.Container>
+      <>
+        <S.Container>
+          <S.ContainerExit>
+            {home ? (
+              <S.ExitLink to="login">
+                <S.Exit src={DoorExit} />
+              </S.ExitLink>
+            ) : (
+              <S.BackLink onClick={redirectTo}>
+                <S.Back src={BackIcon} />
+              </S.BackLink>
+            )}
+            <S.LogoText>{children}</S.LogoText>
+          </S.ContainerExit>
+          <>
+            {!edit && (
+              <>
+                {profileImage ? (
+                  <S.Profile to="profile">
+                    <S.ProfileIcon src={profileImage} />
+                  </S.Profile>
+                ) : (
+                  <S.Profile to="profile">
+                    <S.ProfileIcon src={ProfileIcon} />
+                  </S.Profile>
+                )}
+              </>
+            )}
+          </>
+        </S.Container>
+      </>
     );
   }
   return (
@@ -46,7 +59,7 @@ const HeaderBar = ({ home, profileImage = null, isLogged, children, edit }) => {
       <S.Container>
         <S.ContainerExit>
           {!home && (
-            <S.BackLink onClick={goBack}>
+            <S.BackLink onClick={redirectTo}>
               <S.Back src={BackIcon} />
             </S.BackLink>
           )}
