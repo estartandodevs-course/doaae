@@ -13,6 +13,12 @@ export const Container = styled.div`
 
 export const ContainerInfo = styled.div`
   padding: 12px 10px 9px 13px;
+
+  @media (max-width: 333px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 export const ContainerAvatar = styled.div``;
@@ -46,12 +52,19 @@ export const Location = styled.span`
   display: block;
   font-size: 12px;
   margin-bottom: 10px;
+
+  @media (max-width: 333px) {
+    display: none;
+  }
 `;
 
 export const ContainerDays = styled.div`
   display: flex;
   align-items: center;
   gap: 3px;
+  @media (max-width: 333px) {
+    display: none;
+  }
 `;
 
 export const Semana = styled.span`
