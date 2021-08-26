@@ -16,6 +16,7 @@ export const ContainerCard = styled.section`
     flex-direction: column;
     width: 150px;
     padding: 12px 0;
+    box-sizing: content-box;
   }
 `;
 
