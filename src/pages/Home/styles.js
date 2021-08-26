@@ -1,16 +1,22 @@
 import styled from "styled-components";
 
 export const ContainerMasterHome = styled.section`
-  padding: 0 30px;
-  max-width: 950px;
+  max-width: 100%;
+  width: 1396px;
+  padding: 0 100px;
   margin: 0 auto;
+
+  @media (max-width: 940px) {
+    padding: 0 30px;
+  }
 `;
 
 export const ContainerNavigations = styled.section`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   margin-top: 25px;
+  gap: 50px;
   font-size: 26px;
 
   @media (max-width: 730px) {
@@ -33,7 +39,7 @@ export const ListCardsByCategory = styled.section`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 
   margin-top: 20px;
 
