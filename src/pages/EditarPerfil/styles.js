@@ -11,7 +11,7 @@ export const ContainerEditarPerfil = styled.section`
   margin: 0 auto;
   @media (max-width: 1015px) {
     flex-direction: column;
-    padding: 35px 30px;
+    padding: 0 30px 30px 30px;
     box-sizing: border-box;
   }
 `;
