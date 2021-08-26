@@ -10,7 +10,7 @@ const AgendarDoacao = () => {
     <S.Container>
       <S.ContainerHeader>
         <S.Header>
-          <HeaderBar isLogged>Agendar doação</HeaderBar>
+          <HeaderBar>Agendar doação</HeaderBar>
         </S.Header>
         <p>Preencha os dados de acordo com sua doação</p>
         <h1>Agendando doação para ONG Mais</h1>
@@ -50,7 +50,7 @@ const AgendarDoacao = () => {
               <Input inputType="date" errorMessage={null} />
             </S.DateContainer>
 
-            <Button>Avançar</Button>
+            <Button to="/doacaoagendada">Avançar</Button>
           </S.Form>
         </S.ContainerForm>
       </S.ContainerMasterForm>
