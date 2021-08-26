@@ -3,10 +3,13 @@ import styled from "styled-components";
 export const Container = styled.div`
   max-width: 100%;
   max-height: ${({ small }) => (small ? "347px" : "163px")};
-  overflow-y: scroll;
   overflow-wrap: break-word;
   cursor: pointer;
   transition: all 0.4s ease-out;
+
+  @media (max-width: 330px) {
+    overflow-y: scroll;
+  }
 `;
 
 export const ContainerCape = styled.div`
