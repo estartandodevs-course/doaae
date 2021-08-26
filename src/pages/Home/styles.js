@@ -3,11 +3,15 @@ import styled from "styled-components";
 export const ContainerMasterHome = styled.section`
   max-width: 100%;
   width: 1396px;
-  padding: 0 100px;
   margin: 0 auto;
+  padding: 0 30px;
+`;
 
-  @media (max-width: 940px) {
-    padding: 0 30px;
+export const ContainerHeader = styled.header`
+  padding: 0 100px;
+
+  @media (max-width: 1300px) {
+    padding: 0;
   }
 `;
 
@@ -43,7 +47,7 @@ export const ListCardsByCategory = styled.section`
 
   margin-top: 20px;
 
-  @media (max-width: 985px) {
+  @media (max-width: 1224px) {
     display: flex;
     gap: 15px;
     justify-content: center;

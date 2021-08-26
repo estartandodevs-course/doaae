@@ -3,11 +3,14 @@ import { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { HeaderBar } from "../../components/HeaderBar";
 import { CardInstituicao } from "../../components/CardInstituicao";
-import { InstituicaoContext } from "../../contexts/index";
+import { InstituicaoContext } from "../../contexts/instContext";
+import { UserContext } from "../../contexts/userContext";
 import * as S from "./styles";
 
 const Instituitions = () => {
   const { instituicoes, getAll } = useContext(InstituicaoContext);
+  const { user, getUserOfApi } = useContext(UserContext);
+  console.log(user);
 
   const history = useHistory();
 
@@ -17,11 +20,16 @@ const Instituitions = () => {
 
   useEffect(() => {
     getAll();
+    getUserOfApi();
   }, []);
 
   return (
     <S.ContainerMaster>
-      <HeaderBar>Instituições</HeaderBar>
+      <S.ContainerHeader>
+        <HeaderBar backTo="/home" searchInput>
+          Instituições
+        </HeaderBar>
+      </S.ContainerHeader>
       <S.ContainerCardsInstituitions>
         {instituicoes.map(
           ({ id, nome, logo, verificada, semana, categorias, endereco }) => {

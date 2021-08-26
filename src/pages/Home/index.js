@@ -1,4 +1,3 @@
-import React from "react";
 import { useHistory } from "react-router-dom";
 import { HeaderBar } from "../../components/HeaderBar";
 import { CardCategory } from "../../components/CardCategory";
@@ -16,7 +15,11 @@ const Home = () => {
 
   return (
     <S.ContainerMasterHome>
-      <HeaderBar home />
+      <S.ContainerHeader>
+        <HeaderBar home searchInput>
+          DoaAê
+        </HeaderBar>
+      </S.ContainerHeader>
       <S.ContainerNavigationMobile>
         <div>
           <h1>Navegue pelo mapa</h1>

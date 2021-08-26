@@ -8,7 +8,7 @@ const PageScheduleDonation = () => {
   return (
     <S.Container>
       <S.ContainerHeader>
-        <HeaderBar isLogged>Doação agendada</HeaderBar>
+        <HeaderBar>Doação agendada</HeaderBar>
       </S.ContainerHeader>
       <S.ContainerInfo>
         <LogoBall backTo="/home" />

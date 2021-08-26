@@ -37,7 +37,7 @@ const Login = () => {
           </S.Inputs>
 
           <S.OptionsButtons>
-            <Button>Entrar</Button>
+            <Button to="/home">Entrar</Button>
 
             <S.CreateAccount to="/cadastro">Criar Conta</S.CreateAccount>
 
