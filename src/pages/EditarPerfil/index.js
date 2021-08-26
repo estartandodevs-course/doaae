@@ -6,13 +6,10 @@ import { Button } from "../../components/Button";
 import { HeaderBar } from "../../components/HeaderBar";
 
 const EditarPerfil = () => {
-  const logged = true;
   return (
     <S.ContainerEditarPerfil>
       <S.ContainerHeader>
-        <HeaderBar isLogged={logged} edit>
-          Editar Perfil
-        </HeaderBar>
+        <HeaderBar edit>Editar Perfil</HeaderBar>
       </S.ContainerHeader>
       <S.ContainerInfo>
         <LogoBall backTo="/home" />
