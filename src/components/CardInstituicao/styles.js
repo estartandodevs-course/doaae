@@ -9,6 +9,10 @@ export const Container = styled.div`
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.18);
   border-radius: 10px;
   cursor: pointer;
+
+  @media (max-width: 330px) {
+    width: 100%;
+  }
 `;
 
 export const ContainerInfo = styled.div`
@@ -41,6 +45,10 @@ export const CategorysList = styled.ul`
   display: flex;
   gap: 10px;
   margin-bottom: 5px;
+
+  @media (max-width: 330px) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const Categorys = styled.li`
