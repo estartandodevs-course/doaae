@@ -103,6 +103,10 @@ export const ContainerInputs = styled.div`
   @media (max-width: 580px) {
     margin: 0;
   }
+
+  @media (max-width: 330px) {
+    max-width: 260px;
+  }
 `;
 
 export const ContainerHeader = styled.header`
