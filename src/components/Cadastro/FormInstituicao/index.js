@@ -29,7 +29,7 @@ const FormInstituicao = () => {
         htmlFor="cnpj"
         label="CNPJ"
         errorMessage={null}
-        key="cpf"
+        key="cnpj"
       />
       <InputPassword
         id="senha"
