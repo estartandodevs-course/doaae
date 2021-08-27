@@ -26,6 +26,11 @@ export const SectionTitle = styled.h1``;
 
 export const Form = styled.form`
   margin-top: 23px;
+
+  @media (max-width: 330px) {
+    max-width: 260px;
+  }
+
   > span {
     font-size: 19px;
     line-height: 26px;
@@ -85,6 +90,10 @@ export const ContainerHeader = styled.div`
       font-size: 19px;
       line-height: 26px;
       width: 315px;
+
+      @media (max-width: 330px) {
+        max-width: 260px;
+      }
     }
 
     > p {
