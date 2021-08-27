@@ -1,49 +1,64 @@
+import { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import * as S from "./styles";
 import ProfileIcon from "../../assets/icons/profile-icon.svg";
 import DoorExit from "../../assets/icons/door-exit.svg";
 import BackIcon from "../../assets/icons/back-icon.svg";
 import { SearchInput } from "../SearchInput";
+import { UserContext } from "../../contexts/userContext";
 
-const HeaderBar = ({
-  home,
-  profileImage = null,
-  isLogged,
-  children,
-  edit,
-  backTo = "/home",
-}) => {
+const HeaderBar = ({ home, children, edit, backTo = "/home", searchInput }) => {
+  const { user, getUserOfApi } = useContext(UserContext);
   const history = useHistory();
 
   const redirectTo = () => {
     return history.push(backTo);
   };
 
-  if (isLogged) {
+  useEffect(() => {
+    getUserOfApi();
+  }, []);
+
+  if (user) {
     return (
       <>
         <S.Container>
           <S.ContainerExit>
             {home ? (
-              <S.ExitLink to="login">
-                <S.Exit src={DoorExit} />
-              </S.ExitLink>
+              <>
+                <S.ExitLink to="login">
+                  <S.Exit src={DoorExit} />
+                </S.ExitLink>
+                <S.LogoText>{children}</S.LogoText>
+                {searchInput && (
+                  <S.InputDesktop>
+                    <SearchInput />
+                  </S.InputDesktop>
+                )}
+              </>
             ) : (
-              <S.BackLink onClick={redirectTo}>
-                <S.Back src={BackIcon} />
-              </S.BackLink>
+              <>
+                <S.BackLink onClick={redirectTo}>
+                  <S.Back src={BackIcon} />
+                </S.BackLink>
+                <S.LogoText>{children}</S.LogoText>
+                {searchInput && (
+                  <S.InputDesktop>
+                    <SearchInput />
+                  </S.InputDesktop>
+                )}
+              </>
             )}
-            <S.LogoText>{children}</S.LogoText>
           </S.ContainerExit>
           <>
             {!edit && (
               <>
-                {profileImage ? (
-                  <S.Profile to="profile">
-                    <S.ProfileIcon src={profileImage} />
+                {user.imagemPerfil ? (
+                  <S.Profile to="editarperfil">
+                    <S.ProfileIcon src={user.imagemPerfil} />
                   </S.Profile>
                 ) : (
-                  <S.Profile to="profile">
+                  <S.Profile to="editarperfil">
                     <S.ProfileIcon src={ProfileIcon} />
                   </S.Profile>
                 )}
@@ -51,6 +66,13 @@ const HeaderBar = ({
             )}
           </>
         </S.Container>
+        <>
+          {searchInput && (
+            <S.PositionInputMobile>
+              <SearchInput />
+            </S.PositionInputMobile>
+          )}
+        </>
       </>
     );
   }
@@ -64,14 +86,22 @@ const HeaderBar = ({
             </S.BackLink>
           )}
           <S.LogoText>{children}</S.LogoText>
-          <SearchInput />
+          {searchInput && (
+            <S.InputDesktop>
+              <SearchInput />
+            </S.InputDesktop>
+          )}
         </S.ContainerExit>
 
         <S.Login to="/login">Fazer login</S.Login>
       </S.Container>
-      <S.PositionInputMobile>
-        <SearchInput />
-      </S.PositionInputMobile>
+      <>
+        {searchInput && (
+          <S.PositionInputMobile>
+            <SearchInput />
+          </S.PositionInputMobile>
+        )}
+      </>
     </>
   );
 };

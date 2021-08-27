@@ -62,7 +62,7 @@ export const Inputs = styled.div`
 export const ForgotPassword = styled(Link)`
   position: absolute;
   right: 0px;
-  top: ${({ error }) => (error ? "155px" : "129px")};
+  top: ${({ error }) => (error ? "129px" : "129px")};
   font-family: "Poppins";
   font-weight: 300;
   line-height: 24px;

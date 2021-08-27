@@ -12,18 +12,20 @@ export const ContainerExit = styled.div`
   display: flex;
   align-items: center;
   gap: 25px;
-
-  & > div {
-    @media (max-width: 672px) {
-      display: none;
-    }
-  }
 `;
 
 export const ProfileIcon = styled.img`
   width: 37px;
   height: 37px;
   object-fit: cover;
+`;
+
+export const InputDesktop = styled.div`
+  display: none;
+  @media (min-width: 672px) {
+    display: block;
+    margin-left: 35px;
+  }
 `;
 
 export const Profile = styled(Link)``;

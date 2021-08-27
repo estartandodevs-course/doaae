@@ -94,7 +94,7 @@ export const instituicoes = [
     cnpj: "40.947.759/0001-09",
     verificada: false,
     semana: "seg, qua, sex e dom",
-    categorias: ["Dinheiro"],
+    categorias: ["Dinheiro", "Agasalho"],
     endereco: {
       cep: "08090-284",
       logradouro: "Rua Manoel Melício",

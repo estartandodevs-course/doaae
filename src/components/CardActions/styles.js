@@ -6,6 +6,10 @@ export const Container = styled.div`
   overflow-wrap: break-word;
   cursor: pointer;
   transition: all 0.4s ease-out;
+
+  @media (max-width: 330px) {
+    overflow-y: scroll;
+  }
 `;
 
 export const ContainerCape = styled.div`

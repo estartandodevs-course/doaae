@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import getAllInstituicoes from "../services/api";
+import { getAllInstituicoes } from "../services/api";
 
 const InstituicaoContext = createContext({
   instituicoes: [],

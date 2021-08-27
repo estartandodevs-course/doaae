@@ -1,4 +1,5 @@
 import { instituicoes } from "../mock/ongs";
+import { user } from "../mock/userData";
 
 const getAllInstituicoes = (page = 1, perPage = 10) => {
   const start = (page - 1) * perPage;
@@ -6,4 +7,8 @@ const getAllInstituicoes = (page = 1, perPage = 10) => {
   return instituicoes.slice(start, end);
 };
 
-export default getAllInstituicoes;
+const getUser = () => {
+  return user;
+};
+
+export { getAllInstituicoes, getUser };
