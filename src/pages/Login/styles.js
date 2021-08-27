@@ -14,6 +14,10 @@ export const Container = styled.main`
     display: flex;
     padding: inherit;
   }
+
+  @media (max-width: 330px) {
+    padding: 0;
+  }
 `;
 
 export const BallBottom = styled.div`
@@ -33,6 +37,14 @@ export const Form = styled.form`
   align-items: center;
   margin-top: 67px;
   position: relative;
+  padding-left: 20px;
+
+  @media (max-width: 800px) {
+    padding: 0;
+  }
+  @media (max-width: 330px) {
+    width: 260px;
+  }
 `;
 
 export const ContainerTitle = styled.div`
@@ -40,6 +52,10 @@ export const ContainerTitle = styled.div`
 
   @media (min-width: 800px) {
     display: none;
+  }
+
+  @media (max-width: 330px) {
+    width: 260px;
   }
 `;
 
@@ -71,6 +87,7 @@ export const ForgotPassword = styled(Link)`
 `;
 
 export const OptionsButtons = styled.div`
+  width: 100%;
   margin-top: 60px;
   display: flex;
   flex-direction: column;
