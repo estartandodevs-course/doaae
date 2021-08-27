@@ -22,7 +22,7 @@ const InstitutionalData = () => {
   return (
     <S.SectionOfPage>
       <S.ContainerFromHeader>
-        <HeaderBar backTo="/home">Instituição</HeaderBar>
+        <HeaderBar backTo="/instituicoes">Instituição</HeaderBar>
       </S.ContainerFromHeader>
       <S.ImagefromInstitutional>
         <img src={Cape} alt="Capa" />
