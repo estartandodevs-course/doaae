@@ -16,13 +16,16 @@ export const ContainerText = styled.div`
   padding: 9px 15px;
   box-sizing: border-box;
   margin-left: 31px;
-
   background-color: transparent;
   border: none;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.18);
   border-radius: 0px 10px 10px 0px;
   color: #000;
   text-decoration: none;
+
+  @media (max-width: 307px) {
+    padding: 9px 5px;
+  }
 `;
 
 export const MapIcon = styled.img`
@@ -38,6 +41,11 @@ export const Text = styled.p`
   line-height: 16px;
   text-align: left;
   margin-left: 61px;
+
+  @media (max-width: 380px) {
+    text-align: center;
+    margin-left: 18px;
+  }
 `;
 
 export const Strong = styled.span``;

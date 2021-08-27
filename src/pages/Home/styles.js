@@ -87,7 +87,7 @@ export const ContainerNavigationMobile = styled.div`
   @media (max-width: 730px) {
     height: 236px;
     max-width: 455px;
-    min-width: 280px;
+    min-width: 230px;
     display: flex;
     justify-content: center;
     align-items: center;
