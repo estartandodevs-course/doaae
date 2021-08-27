@@ -15,6 +15,10 @@ const HeaderBar = ({ home, children, edit, backTo = "/home", searchInput }) => {
     return history.push(backTo);
   };
 
+  const redirectToProfile = () => {
+    return history.push("/editarperfil");
+  };
+
   useEffect(() => {
     getUserOfApi();
   }, []);
@@ -54,11 +58,11 @@ const HeaderBar = ({ home, children, edit, backTo = "/home", searchInput }) => {
             {!edit && (
               <>
                 {user.imagemPerfil ? (
-                  <S.Profile to="editarperfil">
+                  <S.Profile onClick={redirectToProfile}>
                     <S.ProfileIcon src={user.imagemPerfil} />
                   </S.Profile>
                 ) : (
-                  <S.Profile to="editarperfil">
+                  <S.Profile onClick={redirectToProfile}>
                     <S.ProfileIcon src={ProfileIcon} />
                   </S.Profile>
                 )}
