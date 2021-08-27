@@ -13,6 +13,11 @@ export const Container = styled.div`
   align-items: center;
 
   gap: 5px;
+
+  @media (min-width: 739px) {
+    gap: 20px;
+    padding: 27px 21px;
+  }
 `;
 
 export const Title = styled.span`
@@ -21,18 +26,37 @@ export const Title = styled.span`
   font-weight: 700;
   line-height: 16px;
   text-align: center;
+
+  @media (min-width: 739px) {
+    font-size: 18px;
+  }
+`;
+
+export const ContainerText = styled.div`
+  max-width: 564px;
+  min-width: 200px;
 `;
 
 export const Text = styled.p`
   font-size: 12px;
-  width: 200px;
+  width: 100%;
   text-align: center;
   line-height: 15px;
   padding-top: 3px;
   border-top: 1px solid #007067;
+
+  @media (min-width: 739px) {
+    font-size: 16px;
+    margin-bottom: 30px;
+    padding-top: 20px;
+  }
 `;
 
 export const Button = styled(Link)`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: Poppins;
   font-size: 10px;
   color: #fff;
@@ -48,4 +72,8 @@ export const Button = styled(Link)`
   padding: 6px 39px;
   margin-top: 10px;
   box-sizing: border-box;
+  @media (min-width: 739px) {
+    font-size: 16px;
+    height: 47px;
+  }
 `;
