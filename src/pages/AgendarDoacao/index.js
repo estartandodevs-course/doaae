@@ -50,7 +50,9 @@ const AgendarDoacao = () => {
               <Input inputType="date" errorMessage={null} />
             </S.DateContainer>
 
-            <Button to="/doacaoagendada">Avançar</Button>
+            <Button to="/doacaoagendada" width="100%">
+              Avançar
+            </Button>
           </S.Form>
         </S.ContainerForm>
       </S.ContainerMasterForm>
