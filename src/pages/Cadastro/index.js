@@ -2,7 +2,8 @@ import { useReducer } from "react";
 import * as S from "./styles";
 import { ContainerNavbar } from "../../components/ContainerNavbar";
 import { CardProfile } from "../../components/CardProfile";
-import { Form } from "../../components/Cadastro/Form";
+import { FormDoador } from "../../components/Cadastro/FormDoador";
+import { FormInstituicao } from "../../components/Cadastro/FormInstituicao";
 import { Description } from "../../components/Cadastro/Description";
 import { DescriptionDesktop } from "../../components/Cadastro/DescriptionDesktop";
 import { LogoBall } from "../../components/LogoBall";
@@ -13,7 +14,6 @@ import DoadorBadge from "../../assets/icons/doador-badge.svg";
 import InstituicaoBadge from "../../assets/icons/instituicao-badge.svg";
 
 const Cadastro = () => {
-  // TODO: Fazer em outro local o handlePerfil
   const handlePerfil = (stateAction, action) => {
     switch (action.type) {
       case "Doador": {
@@ -80,7 +80,8 @@ const Cadastro = () => {
             small={state.close}
           />
         </S.Profiles>
-        {state.close && <Form />}
+        {state.selected === "Doador" && <FormDoador />}
+        {state.selected === "Instituição" && <FormInstituicao />}
       </S.ContainerForm>
     </S.Container>
   );

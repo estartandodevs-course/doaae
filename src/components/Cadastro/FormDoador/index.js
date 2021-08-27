@@ -3,7 +3,7 @@ import * as S from "./styles";
 import { Input, InputPassword } from "../../Input";
 import { Button } from "../../Button";
 
-const Form = () => {
+const FormDoador = () => {
   return (
     <S.Form>
       <S.Title>Cadastro</S.Title>
@@ -24,7 +24,7 @@ const Form = () => {
         key="email"
       />
       <Input
-        inputType="number"
+        inputType="string"
         id="cpf"
         htmlFor="cpf"
         label="CPF"
@@ -52,4 +52,4 @@ const Form = () => {
   );
 };
 
-export { Form };
+export { FormDoador };

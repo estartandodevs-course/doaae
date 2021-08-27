@@ -24,6 +24,11 @@ export const Container = styled.main`
 export const Profiles = styled.div`
   display: flex;
   gap: 23px;
+
+  @media (max-width: 333px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const ContainerForm = styled.div`
