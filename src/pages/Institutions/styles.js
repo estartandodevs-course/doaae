@@ -21,5 +21,5 @@ export const ContainerCardsInstituitions = styled.section`
   flex-wrap: wrap;
   gap: 50px;
   justify-content: center;
-  margin-top: 30px;
+  margin: 30px 0 30px 0;
 `;
