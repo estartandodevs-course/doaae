@@ -28,7 +28,9 @@ export const InputDesktop = styled.div`
   }
 `;
 
-export const Profile = styled(Link)``;
+export const Profile = styled.div`
+  cursor: pointer;
+`;
 
 export const Exit = styled.img``;
 
