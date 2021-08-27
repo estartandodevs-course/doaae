@@ -67,7 +67,9 @@ const EditarPerfil = () => {
               label="Confirmar senha nova"
               errorMessage={null}
             />
-            <Button to="/home">Editar perfil</Button>
+            <Button width="100%" to="/home">
+              Editar perfil
+            </Button>
           </S.ContainerInputs>
         </S.Form>
       </S.ContainerForm>
