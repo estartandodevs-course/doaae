@@ -37,11 +37,15 @@ const Login = () => {
           </S.Inputs>
 
           <S.OptionsButtons>
-            <Button to="/home">Entrar</Button>
+            <Button to="/home" width="100%">
+              Entrar
+            </Button>
 
             <S.CreateAccount to="/cadastro">Criar Conta</S.CreateAccount>
 
-            <Button color="#389674">Pesquisar Instituições</Button>
+            <Button color="#389674" width="100%">
+              Pesquisar Instituições
+            </Button>
           </S.OptionsButtons>
         </S.Form>
       </S.ContainerLogin>
