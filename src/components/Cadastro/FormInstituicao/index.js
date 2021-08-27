@@ -26,8 +26,8 @@ const FormInstituicao = () => {
       <Input
         inputType="string"
         id="cnpj"
-        htmlFor="cpnj"
-        label="CPNJ"
+        htmlFor="cnpj"
+        label="CNPJ"
         errorMessage={null}
         key="cpf"
       />
