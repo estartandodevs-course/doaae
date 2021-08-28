@@ -1,3 +1,5 @@
+import { Formik } from "formik";
+import * as Yup from "yup";
 import * as S from "./styles";
 import { LogoBall } from "../../components/LogoBall";
 import { InputUploadImage } from "../../components/InputUploadImage";
@@ -6,6 +8,22 @@ import { Button } from "../../components/Button";
 import { HeaderBar } from "../../components/HeaderBar";
 
 const EditarPerfil = () => {
+  const validationOfForm = Yup.object().shape({
+    editarNome: Yup.string().required("Preencha esse campo para continuar"),
+    editarEmail: Yup.string()
+      .email("Digite um e-mail válido")
+      .required("Preencha esse campo para continuar"),
+    editarCpf: Yup.string().required("Preencha esse campo para continuar"),
+    senhaAntiga: Yup.string()
+      .min(6, "A senha precisa no mínimo 6 dígitos")
+      .required("Preencha esse campo para continuar"),
+    senhaNova: Yup.string()
+      .min(6, "A senha precisa no mínimo 6 dígitos")
+      .required("Preencha esse campo para continuar"),
+    confirmarSenhaNova: Yup.string()
+      .min(6, "A senha precisa no mínimo 6 dígitos")
+      .required("Preencha esse campo para continuar"),
+  });
   return (
     <S.ContainerEditarPerfil>
       <S.ContainerHeader>
@@ -20,58 +38,85 @@ const EditarPerfil = () => {
       </S.ContainerInfo>
       <S.ContainerForm>
         <S.Text>Altere seus dados ou adicione uma foto ao seu perfil!</S.Text>
-        <S.Form>
-          <S.ContainerUploadImage>
-            <InputUploadImage />
-          </S.ContainerUploadImage>
-          <S.ContainerInputs>
-            <Input
-              inputType="text"
-              id="editarNome"
-              htmlFor="editarNome"
-              label="Nome"
-              errorMessage={null}
-            />
+        <Formik
+          initialValues={{
+            editarNome: "",
+            editarEmail: "",
+            editarCpf: "",
+            senhaAntiga: "",
+            senhaNova: "",
+            confirmarSenhaNova: "",
+          }}
+          validationSchema={validationOfForm}
+        >
+          {({ errors, touched }) => {
+            return (
+              <S.Form>
+                <S.ContainerUploadImage>
+                  <InputUploadImage />
+                </S.ContainerUploadImage>
+                <S.ContainerInputs>
+                  <Input
+                    type="text"
+                    id="editarNome"
+                    htmlFor="editarNome"
+                    label="Nome"
+                    name="editarNome"
+                    error={errors.editarNome && touched.editarNome}
+                  />
 
-            <Input
-              inputType="email"
-              id="editar-email"
-              htmlFor="editar-email"
-              label="Email"
-              errorMessage={null}
-              key="email"
-            />
-            <Input
-              inputType="text"
-              id="editar-cpf"
-              htmlFor="editar-cpf"
-              label="CPF"
-              errorMessage={null}
-              key="cpf"
-            />
-            <InputPassword
-              id="senha-antiga"
-              htmlFor="senha-antiga"
-              errorMessage={null}
-              label="Senha antiga"
-            />
-            <InputPassword
-              id="senha-nova"
-              htmlFor="senha-nova"
-              errorMessage={null}
-              label="Senha nova"
-            />
-            <InputPassword
-              id="editar-confirmar-senha-nova"
-              htmlFor="editar-confirmar-senha-nova"
-              label="Confirmar senha nova"
-              errorMessage={null}
-            />
-            <Button width="100%" to="/home">
-              Editar perfil
-            </Button>
-          </S.ContainerInputs>
-        </S.Form>
+                  <Input
+                    type="email"
+                    id="editaEmail"
+                    htmlFor="editarEmail"
+                    label="Email"
+                    key="email"
+                    name="editarEmail"
+                    error={errors.editarEmail && touched.editarEmail}
+                  />
+                  <Input
+                    type="text"
+                    id="editarCpf"
+                    htmlFor="editarCpf"
+                    label="CPF"
+                    key="cpf"
+                    name="editarCpf"
+                    error={errors.editarCpf && touched.editarCpf}
+                  />
+                  <InputPassword
+                    id="senhaAntiga"
+                    htmlFor="senhaAntiga"
+                    label="Senha antiga"
+                    key="senhaAntiga"
+                    name="senhaAntiga"
+                    error={errors.senhaAntiga && touched.senhaAntiga}
+                  />
+                  <InputPassword
+                    id="senhaNova"
+                    htmlFor="senhaNova"
+                    label="Senha nova"
+                    key="senhaNova"
+                    name="senhaNova"
+                    error={errors.senhaNova && touched.senhaNova}
+                  />
+                  <InputPassword
+                    id="editaConfirmarSenhaNova"
+                    htmlFor="editaConfirmarSenhaNova"
+                    label="Confirmar senha nova"
+                    key="ConfirmarSenhaNova"
+                    name="confirmarSenhaNova"
+                    error={
+                      errors.confirmarSenhaNova && touched.confirmarSenhaNova
+                    }
+                  />
+                  <Button width="100%" to="/home">
+                    Editar perfil
+                  </Button>
+                </S.ContainerInputs>
+              </S.Form>
+            );
+          }}
+        </Formik>
       </S.ContainerForm>
     </S.ContainerEditarPerfil>
   );

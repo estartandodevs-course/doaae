@@ -1,3 +1,5 @@
+import { Formik } from "formik";
+import * as Yup from "yup";
 import * as S from "./styles";
 import { HeaderBar } from "../../components/HeaderBar";
 import { Input } from "../../components/Input";
@@ -6,6 +8,10 @@ import { Button } from "../../components/Button";
 import { LogoBall } from "../../components/LogoBall";
 
 const AgendarDoacao = () => {
+  const validationOfForm = Yup.object().shape({
+    itens: Yup.string().required("Preencha esse campo para continuar"),
+    date: Yup.string().required("Preencha esse campo para continuar"),
+  });
   return (
     <S.Container>
       <S.ContainerHeader>
@@ -25,35 +31,54 @@ const AgendarDoacao = () => {
 
       <S.ContainerMasterForm>
         <S.ContainerForm>
-          <S.Form>
-            <Input
-              inputType="text"
-              id="itens"
-              htmlFor="itens"
-              label="Itens para doar"
-              errorMessage={null}
-            />
+          <Formik
+            initialValues={{
+              itens: "",
+              date: "",
+            }}
+            validationSchema={validationOfForm}
+          >
+            {({ errors, touched }) => {
+              return (
+                <S.Form>
+                  <Input
+                    inputType="text"
+                    id="itens"
+                    htmlFor="itens"
+                    label="Itens para doar"
+                    name="itens"
+                    error={errors.itens && touched.itens}
+                  />
 
-            <textarea
-              name="descricao"
-              id="descricao"
-              placeholder="Detalhes (se preferir, dê mais detalhes sobre sua doação)"
-            />
+                  <textarea
+                    name="descricao"
+                    id="descricao"
+                    placeholder="Detalhes (se preferir, dê mais detalhes sobre sua doação)"
+                  />
 
-            <S.Check>
-              <CheckBox />
-            </S.Check>
+                  <S.Check>
+                    <CheckBox />
+                  </S.Check>
 
-            <span>Quando seria um bom dia para você ir entregar a doação?</span>
+                  <span>
+                    Quando seria um bom dia para você ir entregar a doação?
+                  </span>
 
-            <S.DateContainer>
-              <Input inputType="date" errorMessage={null} />
-            </S.DateContainer>
+                  <S.DateContainer>
+                    <Input
+                      type="date"
+                      name="date"
+                      error={errors.date && touched.date}
+                    />
+                  </S.DateContainer>
 
-            <Button to="/doacaoagendada" width="100%">
-              Avançar
-            </Button>
-          </S.Form>
+                  <Button to="/doacaoagendada" width="100%">
+                    Avançar
+                  </Button>
+                </S.Form>
+              );
+            }}
+          </Formik>
         </S.ContainerForm>
       </S.ContainerMasterForm>
     </S.Container>
