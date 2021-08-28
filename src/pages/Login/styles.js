@@ -30,7 +30,7 @@ export const BallBottom = styled.div`
   border-radius: 50%;
 `;
 
-export const Form = styled.form`
+export const Form = styled.div`
   width: 308px;
   display: flex;
   flex-direction: column;
@@ -78,7 +78,7 @@ export const Inputs = styled.div`
 export const ForgotPassword = styled(Link)`
   position: absolute;
   right: 0px;
-  top: ${({ error }) => (error ? "129px" : "129px")};
+  top: ${({ error }) => (error ? "159px" : "129px")};
   font-family: "Poppins";
   font-weight: 300;
   line-height: 24px;
@@ -170,4 +170,26 @@ export const ContainerLogoEstartando = styled.div`
 export const EstartandoText = styled.span`
   color: #fff;
   font-size: 14px;
+`;
+
+export const ButtonForForm = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: ${({ width }) => width || "308px"};
+  height: ${({ height }) => height || "48px"};
+  background-color: ${({ color }) => color || "#007067"};
+  border-radius: 10px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.18);
+  border: none;
+  font-family: "Poppins";
+  color: #fff9f9;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:disabled {
+    background-color: #c5c5c5;
+  }
 `;
