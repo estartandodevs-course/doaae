@@ -50,8 +50,6 @@ const EditarPerfil = () => {
           validationSchema={validationOfForm}
         >
           {({ errors, touched }) => {
-            console.log(errors);
-            console.log(touched);
             return (
               <S.Form>
                 <S.ContainerUploadImage>
