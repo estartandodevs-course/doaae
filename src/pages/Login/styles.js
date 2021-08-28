@@ -84,6 +84,10 @@ export const ForgotPassword = styled(Link)`
   line-height: 24px;
   color: #898989;
   text-decoration: underline;
+
+  @media (max-width: 325px) {
+    top: ${({ error }) => (error ? "180px" : "150px")};
+  }
 `;
 
 export const OptionsButtons = styled.div`
