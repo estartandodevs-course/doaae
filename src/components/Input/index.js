@@ -5,14 +5,14 @@ import EyeSlashed from "../../assets/icons/eye-slashed.svg";
 import Eye from "../../assets/icons/eye.svg";
 import { InputElement, InputDefault } from "./styles";
 
-const Input = ({ id, htmlFor, label, value, ...props }) => {
+const Input = ({ id, htmlFor, label, width, ...props }) => {
   const [_, meta] = useField(props);
   return (
-    <InputElement>
+    <InputElement width={width}>
       <InputDefault
         id={id}
         className="input-form"
-        error={meta.error}
+        htmlFor={htmlFor}
         placeholder=" "
         {...props}
       />
@@ -35,13 +35,12 @@ const InputPassword = ({ id, htmlFor, label, width, ...props }) => {
   const [_, meta] = useField(props);
 
   return (
-    <InputElement>
+    <InputElement width={width}>
       <InputDefault
         className="input-form"
         type={passwordVisibility ? "text" : "password"}
         id={id}
         placeholder=" "
-        error={meta.error}
         {...props}
       />
       {meta.error && meta.touched ? (
