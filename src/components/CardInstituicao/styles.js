@@ -10,7 +10,7 @@ export const Container = styled.div`
   border-radius: 10px;
   cursor: pointer;
 
-  @media (max-width: 330px) {
+  @media (max-width: 400px) {
     width: 100%;
   }
 `;
@@ -18,7 +18,7 @@ export const Container = styled.div`
 export const ContainerInfo = styled.div`
   padding: 12px 10px 9px 13px;
 
-  @media (max-width: 333px) {
+  @media (max-width: 400px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,6 +38,10 @@ export const Name = styled.span`
   font-size: 22px;
   font-weight: 700;
   display: block;
+
+  @media (max-width: 330px) {
+    font-size: 18px;
+  }
 `;
 
 export const CategorysList = styled.ul`
@@ -46,7 +50,7 @@ export const CategorysList = styled.ul`
   gap: 10px;
   margin-bottom: 5px;
 
-  @media (max-width: 330px) {
+  @media (max-width: 400px) {
     flex-wrap: wrap;
   }
 `;
@@ -61,7 +65,7 @@ export const Location = styled.span`
   font-size: 12px;
   margin-bottom: 10px;
 
-  @media (max-width: 333px) {
+  @media (max-width: 400px) {
     display: none;
   }
 `;
@@ -70,7 +74,7 @@ export const ContainerDays = styled.div`
   display: flex;
   align-items: center;
   gap: 3px;
-  @media (max-width: 333px) {
+  @media (max-width: 400px) {
     display: none;
   }
 `;
