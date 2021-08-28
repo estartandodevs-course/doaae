@@ -9,8 +9,6 @@ import * as S from "./styles";
 
 const Instituitions = () => {
   const { instituicoes, getAll } = useContext(InstituicaoContext);
-  const { user, getUserOfApi } = useContext(UserContext);
-  console.log(user);
 
   const history = useHistory();
 
@@ -20,7 +18,6 @@ const Instituitions = () => {
 
   useEffect(() => {
     getAll();
-    getUserOfApi();
   }, []);
 
   return (
