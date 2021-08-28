@@ -18,7 +18,6 @@ const FormDoador = () => {
       .min(6, "A senha precisa no mínimo 6 dígitos")
       .required("Preencha esse campo para continuar"),
   });
-
   return (
     <Formik
       initialValues={{
