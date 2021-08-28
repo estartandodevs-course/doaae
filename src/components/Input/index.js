@@ -1,40 +1,52 @@
+/* eslint-disable */
 import { useState } from "react";
-import { InputElement } from "./styles";
+import { useField } from "formik";
 import EyeSlashed from "../../assets/icons/eye-slashed.svg";
 import Eye from "../../assets/icons/eye.svg";
+import { InputElement, InputDefault } from "./styles";
 
-// Input genérico
-const Input = ({ inputType, id, htmlFor, label, errorMessage, width }) => {
+const Input = ({ id, htmlFor, label, value, ...props }) => {
+  const [_, meta] = useField(props);
   return (
-    <InputElement error={errorMessage} width={width}>
-      <input className="input-form" type={inputType} id={id} placeholder=" " />
+    <InputElement>
+      <InputDefault
+        id={id}
+        className="input-form"
+        error={meta.error}
+        placeholder=" "
+        {...props}
+      />
+      {meta.error && meta.touched ? (
+        <span className="input-error-msg">{meta.error}</span>
+      ) : null}
       <label className="label-form" htmlFor={htmlFor}>
         {label}
       </label>
-      {errorMessage !== null ? (
-        <span className="input-error-msg">{errorMessage}</span>
-      ) : null}
     </InputElement>
   );
 };
 
-// Input de senha
-const InputPassword = ({ id, htmlFor, label, errorMessage, width }) => {
+const InputPassword = ({ id, htmlFor, label, width, ...props }) => {
   const [passwordVisibility, setPasswordVisibility] = useState(false);
 
-  // Define o estado se é visível ou não
   const togglePassword = () => {
     setPasswordVisibility(!passwordVisibility);
   };
+  const [_, meta] = useField(props);
 
   return (
-    <InputElement error={errorMessage} width={width}>
-      <input
+    <InputElement>
+      <InputDefault
         className="input-form"
         type={passwordVisibility ? "text" : "password"}
         id={id}
         placeholder=" "
+        error={meta.error}
+        {...props}
       />
+      {meta.error && meta.touched ? (
+        <span className="input-error-msg">{meta.error}</span>
+      ) : null}
       <label className="label-form" htmlFor={htmlFor}>
         {label}
       </label>
@@ -46,9 +58,6 @@ const InputPassword = ({ id, htmlFor, label, errorMessage, width }) => {
         src={passwordVisibility ? Eye : EyeSlashed}
         alt="Eyer slash icon"
       />
-      {errorMessage !== null ? (
-        <span className="input-error-msg">{errorMessage}</span>
-      ) : null}
     </InputElement>
   );
 };

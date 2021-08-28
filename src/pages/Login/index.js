@@ -1,48 +1,101 @@
-import * as S from "./styles";
+import { Formik } from "formik";
+import * as Yup from "yup";
+import { useHistory } from "react-router-dom";
 import { Logo } from "../../components/Shared/Logo";
+import { LogoBall } from "../../components/LogoBall";
 import { Input, InputPassword } from "../../components/Input";
-import { Button } from "../../components/button";
+import { Button } from "../../components/Button";
+import DesktopImage from "../../assets/img/login-background-desktop.png";
+import LogoEstartando from "../../assets/icons/logo-estartando-devs.svg";
+import * as S from "./styles";
 
 const Login = () => {
-  const error = true;
+  const history = useHistory();
+
+  const validationOfForm = Yup.object().shape({
+    email: Yup.string()
+      .email("Digite um e-mail válido")
+      .required("Preencha esse campo para continuar"),
+    senha: Yup.string()
+      .min(6, "A senha deve ter no mínimo 6 digítos")
+      .required("Preencha esse campo para continuar"),
+  });
+
+  const redirectToHome = () => {
+    return history.push("/home");
+  };
+
   return (
     <S.Container>
-      <S.Ball />
+      <S.ContainerLogin>
+        <LogoBall />
+        <S.Form>
+          <S.ContainerTitle>
+            <S.Title>Login</S.Title>
+          </S.ContainerTitle>
 
-      <S.LogoContainer>
-        <Logo />
-      </S.LogoContainer>
+          <Formik
+            initialValues={{
+              email: "",
+              senha: "",
+            }}
+            validationSchema={validationOfForm}
+          >
+            {({ errors }) => {
+              return (
+                <>
+                  <S.Inputs>
+                    <Input
+                      inputType="email"
+                      id="email"
+                      htmlFor="email"
+                      label="Email"
+                      name="email"
+                    />
 
-      <S.Form>
-        <S.TitleContainer>
-          <S.Title>Login</S.Title>
-        </S.TitleContainer>
+                    <InputPassword
+                      id="senha"
+                      htmlFor="senha"
+                      label="Senha"
+                      name="senha"
+                    />
+                    <S.ForgotPassword error={errors.senha}>
+                      Esqueci minha senha
+                    </S.ForgotPassword>
+                  </S.Inputs>
 
-        <S.Inputs>
-          <Input
-            inputType="email"
-            id="email"
-            htmlFor="email"
-            label="Email"
-            errorMessage={null}
-          />
-          <InputPassword
-            id="senha"
-            htmlFor="senha"
-            label="Senha"
-            errorMessage={null}
-          />
-          <S.ForgotPassword error={error}>Esqueci minha senha</S.ForgotPassword>
-        </S.Inputs>
+                  <S.OptionsButtons>
+                    <S.ButtonForForm onClick={redirectToHome} width="100%">
+                      Entrar
+                    </S.ButtonForForm>
 
-        <S.OptionsButtons>
-          <Button>Entrar</Button>
+                    <S.CreateAccount to="/cadastro">
+                      Criar Conta
+                    </S.CreateAccount>
 
-          <S.CreateAccount>Criar Conta</S.CreateAccount>
+                    <Button color="#389674" width="100%">
+                      Pesquisar Instituições
+                    </Button>
+                  </S.OptionsButtons>
+                </>
+              );
+            }}
+          </Formik>
+        </S.Form>
+      </S.ContainerLogin>
 
-          <Button color="#389674">Pesquisar Instituições</Button>
-        </S.OptionsButtons>
-      </S.Form>
+      <S.ContainerImage>
+        <S.Image src={DesktopImage} />
+        <S.ContainerLogoBottom>
+          <Logo />
+          <S.ContainerLogoEstartando>
+            <S.LogoEstartando src={LogoEstartando} />
+            <S.EstartandoText>Estartando Devs 2021</S.EstartandoText>
+          </S.ContainerLogoEstartando>
+        </S.ContainerLogoBottom>
+
+        <S.BallBottom />
+      </S.ContainerImage>
     </S.Container>
   );
 };

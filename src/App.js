@@ -1,10 +1,18 @@
 import React from "react";
 import Routes from "./routes";
+import GlobalStyle from "./styles/GlobalStyle";
+import { InstituicaoProvider } from "./contexts/instContext";
+import { UserProvider } from "./contexts/userContext";
 
-import "./styles/global.scss";
-import "./styles/reset.scss";
 import "./styles/fonts.scss";
 
 export default function App() {
-  return <Routes />;
+  return (
+    <UserProvider>
+      <InstituicaoProvider>
+        <GlobalStyle />
+        <Routes />
+      </InstituicaoProvider>
+    </UserProvider>
+  );
 }
