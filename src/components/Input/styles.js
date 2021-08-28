@@ -9,6 +9,10 @@ const InputElement = styled.div`
   font-size: 1.125rem;
   margin-bottom: 33px;
 
+  @media (max-width: 325px) {
+    margin-bottom: 48px;
+  }
+
   .label-form {
     font-family: inherit;
     font-weight: 300;
