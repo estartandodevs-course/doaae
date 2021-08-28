@@ -12,7 +12,7 @@ const InputElement = styled.div`
   .label-form {
     font-family: inherit;
     font-weight: 300;
-    color: ${({ error }) => (error ? "#af4242" : "#393939")};
+    color: #393939;
     font-size: inherit;
     position: absolute;
     top: 0.7rem;
@@ -28,7 +28,7 @@ const InputElement = styled.div`
     top: -0.7rem;
     left: 0.6rem;
     font-weight: 500;
-    color: ${({ error }) => (error ? "#af4242" : "#389674")};
+    color: #389674;
     background-color: #fff;
   }
 
@@ -55,7 +55,7 @@ const InputDefault = styled(Field)`
   top: 0;
   left: 0;
   border: 2px solid;
-  border-color: ${({ error }) => (error ? "#af4242" : "#389674")};
+  border-color: #389674;
   border-radius: 0.625rem;
   width: 100%;
   height: 100%;
@@ -71,7 +71,7 @@ const InputDefault = styled(Field)`
 
   .input-form:focus {
     border: 3px solid;
-    border-color: ${({ error }) => (error ? "#af4242" : "#389674")};
+    border-color: #389674;
   }
 `;
 export { InputElement, InputDefault };
