@@ -15,7 +15,7 @@ const FormInstituicao = () => {
       .min(6, "A senha precisa no mínimo 6 dígitos")
       .required("Preencha esse campo para continuar"),
     confirmarSenha: Yup.string()
-      .min(6, "A senha precisa no mínimo 6 dígitos")
+      .oneOf([Yup.ref("senha"), null], "As senhas precisam ser iguais")
       .required("Preencha esse campo para continuar"),
   });
   return (
@@ -29,45 +29,59 @@ const FormInstituicao = () => {
       }}
       validationSchema={validationOfForm}
     >
-      <S.Form>
-        <S.Title>Cadastro</S.Title>
-        <Input
-          type="text"
-          id="nome"
-          htmlFor="nome"
-          label="Nome"
-          key="nome"
-          name="nome"
-        />
-        <Input
-          type="email"
-          id="email"
-          htmlFor="email"
-          label="E-mail"
-          key="email"
-          name="email"
-        />
-        <Input
-          type="string"
-          id="cnpj"
-          htmlFor="cnpj"
-          label="CNPJ"
-          key="cnpj"
-          name="cnpj"
-        />
-        <InputPassword id="senha" htmlFor="senha" label="Senha" name="senha" />
-        <InputPassword
-          id="confirmarSenha"
-          htmlFor="confirmarSenha"
-          label="Confirmar senha"
-          name="confirmarSenha"
-        />
-        <S.ContainerButton>
-          <Button to="/home" width="100%">
-            Cadastrar
-          </Button>
-        </S.ContainerButton>
-      </S.Form>
+      {({ errors, touched }) => {
+        return (
+          <S.Form>
+            <S.Title>Cadastro</S.Title>
+            <Input
+              type="text"
+              id="nome"
+              htmlFor="nome"
+              label="Nome"
+              key="nome"
+              name="nome"
+              error={errors.nome && touched.nome}
+            />
+            <Input
+              type="email"
+              id="email"
+              htmlFor="email"
+              label="E-mail"
+              key="email"
+              name="email"
+              error={errors.email && touched.email}
+            />
+            <Input
+              type="string"
+              id="cnpj"
+              htmlFor="cnpj"
+              label="CNPJ"
+              key="cnpj"
+              name="cnpj"
+              error={errors.cnpj && touched.cnpj}
+            />
+            <InputPassword
+              id="senha"
+              htmlFor="senha"
+              label="Senha"
+              name="senha"
+              error={errors.senha && touched.senha}
+            />
+            <InputPassword
+              id="confirmarSenha"
+              htmlFor="confirmarSenha"
+              label="Confirmar senha"
+              name="confirmarSenha"
+              error={errors.confirmarSenha && touched.confirmarSenha}
+            />
+            <S.ContainerButton>
+              <Button to="/home" width="100%">
+                Cadastrar
+              </Button>
+            </S.ContainerButton>
+          </S.Form>
+        );
+      }}
     </Formik>
   );
 };

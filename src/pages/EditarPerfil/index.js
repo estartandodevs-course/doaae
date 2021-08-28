@@ -20,7 +20,7 @@ const EditarPerfil = () => {
     senhaNova: Yup.string()
       .min(6, "A senha precisa no mínimo 6 dígitos")
       .required("Preencha esse campo para continuar"),
-    editaConfirmarSenhaNova: Yup.string()
+    confirmarSenhaNova: Yup.string()
       .min(6, "A senha precisa no mínimo 6 dígitos")
       .required("Preencha esse campo para continuar"),
   });
@@ -45,65 +45,77 @@ const EditarPerfil = () => {
             editarCpf: "",
             senhaAntiga: "",
             senhaNova: "",
-            ConfirmarSenhaNova: "",
+            confirmarSenhaNova: "",
           }}
           validationSchema={validationOfForm}
         >
-          <S.Form>
-            <S.ContainerUploadImage>
-              <InputUploadImage />
-            </S.ContainerUploadImage>
-            <S.ContainerInputs>
-              <Input
-                inputType="text"
-                id="editarNome"
-                htmlFor="editarNome"
-                label="Nome"
-                name="editarNome"
-              />
+          {({ errors, touched }) => {
+            return (
+              <S.Form>
+                <S.ContainerUploadImage>
+                  <InputUploadImage />
+                </S.ContainerUploadImage>
+                <S.ContainerInputs>
+                  <Input
+                    type="text"
+                    id="editarNome"
+                    htmlFor="editarNome"
+                    label="Nome"
+                    name="editarNome"
+                    error={errors.editarNome && touched.editarNome}
+                  />
 
-              <Input
-                inputType="email"
-                id="editaEmail"
-                htmlFor="editarEmail"
-                label="Email"
-                key="email"
-                name="editarEmail"
-              />
-              <Input
-                inputType="text"
-                id="editarCpf"
-                htmlFor="editarCpf"
-                label="CPF"
-                key="cpf"
-                name="editarCpf"
-              />
-              <InputPassword
-                id="senhaAntiga"
-                htmlFor="senhaAntiga"
-                label="Senha antiga"
-                key="senhaAntiga"
-                name="senhaAntiga"
-              />
-              <InputPassword
-                id="senhaNova"
-                htmlFor="senhaNova"
-                label="Senha nova"
-                key="senhaNova"
-                name="senhaNova"
-              />
-              <InputPassword
-                id="editaConfirmarSenhaNova"
-                htmlFor="editaConfirmarSenhaNova"
-                label="Confirmar senha nova"
-                key="ConfirmarSenhaNova"
-                name="editaConfirmarSenhaNova"
-              />
-              <Button width="100%" to="/home">
-                Editar perfil
-              </Button>
-            </S.ContainerInputs>
-          </S.Form>
+                  <Input
+                    type="email"
+                    id="editaEmail"
+                    htmlFor="editarEmail"
+                    label="Email"
+                    key="email"
+                    name="editarEmail"
+                    error={errors.editarEmail && touched.editarEmail}
+                  />
+                  <Input
+                    type="text"
+                    id="editarCpf"
+                    htmlFor="editarCpf"
+                    label="CPF"
+                    key="cpf"
+                    name="editarCpf"
+                    error={errors.editarCpf && touched.editarCpf}
+                  />
+                  <InputPassword
+                    id="senhaAntiga"
+                    htmlFor="senhaAntiga"
+                    label="Senha antiga"
+                    key="senhaAntiga"
+                    name="senhaAntiga"
+                    error={errors.senhaAntiga && touched.senhaAntiga}
+                  />
+                  <InputPassword
+                    id="senhaNova"
+                    htmlFor="senhaNova"
+                    label="Senha nova"
+                    key="senhaNova"
+                    name="senhaNova"
+                    error={errors.senhaNova && touched.senhaNova}
+                  />
+                  <InputPassword
+                    id="editaConfirmarSenhaNova"
+                    htmlFor="editaConfirmarSenhaNova"
+                    label="Confirmar senha nova"
+                    key="ConfirmarSenhaNova"
+                    name="confirmarSenhaNova"
+                    error={
+                      errors.confirmarSenhaNova && touched.confirmarSenhaNova
+                    }
+                  />
+                  <Button width="100%" to="/home">
+                    Editar perfil
+                  </Button>
+                </S.ContainerInputs>
+              </S.Form>
+            );
+          }}
         </Formik>
       </S.ContainerForm>
     </S.ContainerEditarPerfil>

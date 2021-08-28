@@ -41,7 +41,7 @@ const Login = () => {
             }}
             validationSchema={validationOfForm}
           >
-            {({ errors }) => {
+            {({ errors, touched }) => {
               return (
                 <>
                   <S.Inputs>
@@ -51,6 +51,7 @@ const Login = () => {
                       htmlFor="email"
                       label="Email"
                       name="email"
+                      error={errors.email && touched.email}
                     />
 
                     <InputPassword
@@ -58,8 +59,9 @@ const Login = () => {
                       htmlFor="senha"
                       label="Senha"
                       name="senha"
+                      error={errors.senha && touched.senha}
                     />
-                    <S.ForgotPassword error={errors.senha}>
+                    <S.ForgotPassword error={errors.senha && touched.senha}>
                       Esqueci minha senha
                     </S.ForgotPassword>
                   </S.Inputs>
