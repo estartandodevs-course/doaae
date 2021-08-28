@@ -14,7 +14,7 @@ const FormDoador = () => {
     senha: Yup.string()
       .min(6, "A senha precisa no mínimo 6 dígitos")
       .required("Preencha esse campo para continuar"),
-    confirmaSenha: Yup.string()
+    confirmarSenha: Yup.string()
       .min(6, "A senha precisa no mínimo 6 dígitos")
       .required("Preencha esse campo para continuar"),
   });
@@ -25,7 +25,7 @@ const FormDoador = () => {
         email: "",
         cpf: "",
         senha: "",
-        confirmaSenha: "",
+        confirmarSenha: "",
       }}
       validationSchema={validationOfForm}
     >
@@ -60,8 +60,8 @@ const FormDoador = () => {
           id="confirmaSenha"
           htmlFor="confirmaSenha"
           label="Confirmar senha"
-          key="confirmaSenha"
-          name="confirmaSenha"
+          key="confirmarSenha"
+          name="confirmarSenha"
         />
         <S.ContainerButton>
           <Button to="/home" width="100%">
