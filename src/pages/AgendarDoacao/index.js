@@ -38,37 +38,46 @@ const AgendarDoacao = () => {
             }}
             validationSchema={validationOfForm}
           >
-            <S.Form>
-              <Input
-                inputType="text"
-                id="itens"
-                htmlFor="itens"
-                label="Itens para doar"
-                name="itens"
-              />
+            {({ errors, touched }) => {
+              return (
+                <S.Form>
+                  <Input
+                    inputType="text"
+                    id="itens"
+                    htmlFor="itens"
+                    label="Itens para doar"
+                    name="itens"
+                    error={errors.itens && touched.itens}
+                  />
 
-              <textarea
-                name="descricao"
-                id="descricao"
-                placeholder="Detalhes (se preferir, dê mais detalhes sobre sua doação)"
-              />
+                  <textarea
+                    name="descricao"
+                    id="descricao"
+                    placeholder="Detalhes (se preferir, dê mais detalhes sobre sua doação)"
+                  />
 
-              <S.Check>
-                <CheckBox />
-              </S.Check>
+                  <S.Check>
+                    <CheckBox />
+                  </S.Check>
 
-              <span>
-                Quando seria um bom dia para você ir entregar a doação?
-              </span>
+                  <span>
+                    Quando seria um bom dia para você ir entregar a doação?
+                  </span>
 
-              <S.DateContainer>
-                <Input type="date" name="date" />
-              </S.DateContainer>
+                  <S.DateContainer>
+                    <Input
+                      type="date"
+                      name="date"
+                      error={errors.date && touched.date}
+                    />
+                  </S.DateContainer>
 
-              <Button to="/doacaoagendada" width="100%">
-                Avançar
-              </Button>
-            </S.Form>
+                  <Button to="/doacaoagendada" width="100%">
+                    Avançar
+                  </Button>
+                </S.Form>
+              );
+            }}
           </Formik>
         </S.ContainerForm>
       </S.ContainerMasterForm>
