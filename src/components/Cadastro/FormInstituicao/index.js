@@ -2,7 +2,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import * as S from "./styles";
 import { Input, InputPassword } from "../../Input";
-import { Button } from "../../Button";
+import { ButtonForForm } from "../../../pages/Login/styles";
 
 const FormInstituicao = () => {
   const validationOfForm = Yup.object().shape({
@@ -75,9 +75,9 @@ const FormInstituicao = () => {
               error={errors.confirmarSenha && touched.confirmarSenha}
             />
             <S.ContainerButton>
-              <Button to="/home" width="100%">
+              <ButtonForForm width="100%" disabled>
                 Cadastrar
-              </Button>
+              </ButtonForForm>
             </S.ContainerButton>
           </S.Form>
         );
